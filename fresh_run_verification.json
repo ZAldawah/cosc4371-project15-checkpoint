@@ -1,0 +1,15 @@
+{
+  "fresh_download_run_exit_code": 0,
+  "verified_remote_file_hashes": 7,
+  "artifact_byte_matches": {
+    "split.csv": true,
+    "scores.csv": true,
+    "validation_scores.csv": true,
+    "checker_output.txt": true,
+    "audit/removed_rows.csv": true,
+    "audit/duplicate_groups.csv": true,
+    "audit/near_duplicate_edges.csv": true
+  },
+  "checker_unchanged": true,
+  "note": "Fresh source-only copy downloaded all seven pinned files and reproduced outputs. Runtime measurements may differ."
+}

@@ -1,0 +1,597 @@
+{
+  "seed": 4371,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.7.2",
+    "pyarrow": "22.0.0",
+    "matplotlib": "3.10.7",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0"
+  },
+  "hardware": {
+    "platform": "Windows-11-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "logical_cpus": 24,
+    "training_device": "CPU only",
+    "fit_thread_limit": 1,
+    "windows_hardware": {
+      "name": "13th Gen Intel(R) Core(TM) i7-13700K",
+      "cores": 16,
+      "logical_processors": 24,
+      "ram_bytes": 34160041984
+    }
+  },
+  "input_audit": {
+    "files": [
+      {
+        "dataset": "safeguard",
+        "source_split": "test",
+        "rows": 2060,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "sha256": "99981a32fa354d9f541aea7214c15fed258c67639dcb3da5751968b043d8f742",
+        "revision": "a3a877d608f37b7d20d9945671902df895ecdb46",
+        "local_path": "xTRam1__safe-guard-prompt-injection/data/test-00000-of-00001.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "label": 0
+        }
+      },
+      {
+        "dataset": "safeguard",
+        "source_split": "train",
+        "rows": 8236,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "sha256": "0f1879d20f98e8b47589453cd7dceb71f4a94e4abec8b0cf809188d1aeca3b3e",
+        "revision": "a3a877d608f37b7d20d9945671902df895ecdb46",
+        "local_path": "xTRam1__safe-guard-prompt-injection/data/train-00000-of-00001.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "label": 0
+        }
+      },
+      {
+        "dataset": "deepset",
+        "source_split": "test",
+        "rows": 116,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "sha256": "39ac797cabc157eeed58435a08593b2952bb6cb16fc394a2d383f447cc7b246e",
+        "revision": "4f61ecb038e9c3fb77e21034b22511b523772cdd",
+        "local_path": "deepset__prompt-injections/data/test-00000-of-00001-701d16158af87368.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "label": 0
+        }
+      },
+      {
+        "dataset": "deepset",
+        "source_split": "train",
+        "rows": 546,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "sha256": "2e10bc7ab30f542c97e4e83e2a5683000b5057d25ec10908784c631d44124c04",
+        "revision": "4f61ecb038e9c3fb77e21034b22511b523772cdd",
+        "local_path": "deepset__prompt-injections/data/train-00000-of-00001-9564e8b05b4757ab.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "label": 0
+        }
+      },
+      {
+        "dataset": "gandalf",
+        "source_split": "test",
+        "rows": 112,
+        "columns": [
+          "text",
+          "similarity"
+        ],
+        "column_count": 2,
+        "sha256": "56b646d133335ebc535266bd55dbe1b5bee7caa4b95bf49d040684b9b5dd9972",
+        "revision": "04737b65e90a6794ec227012e4a255a7def6344b",
+        "local_path": "Lakera__gandalf_ignore_instructions/data/test-00000-of-00001-bc92128b9288a6d1.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "similarity": 0
+        }
+      },
+      {
+        "dataset": "gandalf",
+        "source_split": "train",
+        "rows": 777,
+        "columns": [
+          "text",
+          "similarity"
+        ],
+        "column_count": 2,
+        "sha256": "5b6acf3e5a5998d21f8e1222bb45bbdec25a14408747b1cd63bebef4a75fa439",
+        "revision": "04737b65e90a6794ec227012e4a255a7def6344b",
+        "local_path": "Lakera__gandalf_ignore_instructions/data/train-00000-of-00001-ded53be747ff55cd.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "similarity": 0
+        }
+      },
+      {
+        "dataset": "gandalf",
+        "source_split": "validation",
+        "rows": 111,
+        "columns": [
+          "text",
+          "similarity"
+        ],
+        "column_count": 2,
+        "sha256": "f51ab3e3407a368845b0f57932cc745c09280429416d7507bd178a16326a79f6",
+        "revision": "04737b65e90a6794ec227012e4a255a7def6344b",
+        "local_path": "Lakera__gandalf_ignore_instructions/data/validation-00000-of-00001-94481a2a09ff2fff.parquet",
+        "missing_per_column": {
+          "text": 0,
+          "similarity": 0
+        }
+      }
+    ],
+    "datasets": {
+      "deepset": {
+        "rows": 662,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "positive_rows": 263,
+        "negative_rows": 399,
+        "positive_percent": 39.72809667673716,
+        "negative_percent": 60.27190332326284,
+        "label_interpretation": "supplied binary source label",
+        "missing_source_target": 0,
+        "invalid_supplied_label_rows": 0,
+        "missing_or_blank_text_rows": 0,
+        "exact_duplicate_excess": 0,
+        "exact_duplicate_groups": 0,
+        "exact_duplicate_involved_rows": 0,
+        "exact_duplicate_pairs": 0,
+        "duplicate_definition": "identical original text, label excluded; excess = rows - unique text strings",
+        "repeated_entity_counts": "unavailable: no user, session, host, or author identifier field",
+        "time_range": "unavailable: no per-row timestamp field"
+      },
+      "gandalf": {
+        "rows": 1000,
+        "columns": [
+          "text",
+          "similarity"
+        ],
+        "column_count": 2,
+        "positive_rows": 1000,
+        "negative_rows": 0,
+        "positive_percent": 100.0,
+        "negative_percent": 0.0,
+        "label_interpretation": "presumed positives; binary source target unavailable",
+        "missing_source_target": 1000,
+        "invalid_supplied_label_rows": 0,
+        "missing_or_blank_text_rows": 0,
+        "exact_duplicate_excess": 0,
+        "exact_duplicate_groups": 0,
+        "exact_duplicate_involved_rows": 0,
+        "exact_duplicate_pairs": 0,
+        "duplicate_definition": "identical original text, label excluded; excess = rows - unique text strings",
+        "repeated_entity_counts": "unavailable: no user, session, host, or author identifier field",
+        "time_range": "unavailable: no per-row timestamp field"
+      },
+      "safeguard": {
+        "rows": 10296,
+        "columns": [
+          "text",
+          "label"
+        ],
+        "column_count": 2,
+        "positive_rows": 3146,
+        "negative_rows": 7150,
+        "positive_percent": 30.555555555555557,
+        "negative_percent": 69.44444444444444,
+        "label_interpretation": "supplied binary source label",
+        "missing_source_target": 0,
+        "invalid_supplied_label_rows": 0,
+        "missing_or_blank_text_rows": 0,
+        "exact_duplicate_excess": 159,
+        "exact_duplicate_groups": 91,
+        "exact_duplicate_involved_rows": 250,
+        "exact_duplicate_pairs": 341,
+        "duplicate_definition": "identical original text, label excluded; excess = rows - unique text strings",
+        "repeated_entity_counts": "unavailable: no user, session, host, or author identifier field",
+        "time_range": "unavailable: no per-row timestamp field"
+      }
+    },
+    "total_rows": 11958
+  },
+  "near_duplicates": {
+    "rule": "NFKC, casefold, whitespace collapse; distinct character 5-gram sets; Jaccard >= 0.85; strings shorter than 5 use their whole string as one token",
+    "scope": "all 11958 input rows, every dataset; no subsampling",
+    "method": "lossless globally-frequency-ordered prefix filtering plus length filtering and exact integer set-intersection verification",
+    "threshold": 0.85,
+    "candidate_pairs_verified": 85006,
+    "distinct_raw_texts": 11793,
+    "near_unique_text_pairs": 570,
+    "near_row_pairs_excluding_identical_raw_text": 982,
+    "primary_near_row_pairs_excluding_identical_raw_text": 962,
+    "primary_distinct_raw_texts_in_near_pairs": 493,
+    "primary_rows_in_near_pairs": 561,
+    "all_exact_or_near_components": 11468,
+    "all_non_singleton_components": 269,
+    "primary_exact_or_near_non_singleton_components": 252,
+    "primary_exact_or_near_component_excess": 469,
+    "elapsed_seconds": 3.899207100010244,
+    "transitivity": "Connected components include chains whose endpoints need not directly meet the threshold."
+  },
+  "cleanup": {
+    "input_rows": 11958,
+    "kept_rows": 11706,
+    "removed_rows": 252,
+    "moved_test_rows_into_development": 0,
+    "conflicting_exact_text_keys": 7,
+    "cross_dataset_exact_text_keys": 6,
+    "removal_flag_counts_overlapping": {
+      "cross_dataset_exact_overlap": 12,
+      "development_group_touches_test": 240,
+      "exact_label_conflict": 15
+    },
+    "exclusive_primary_removal_counts": {
+      "development_group_touches_test": 235,
+      "exact_label_conflict": 15,
+      "cross_dataset_exact_overlap": 2
+    },
+    "removed_by_dataset_source_split": [
+      {
+        "dataset": "deepset",
+        "source_split": "test",
+        "rows": 2
+      },
+      {
+        "dataset": "deepset",
+        "source_split": "train",
+        "rows": 4
+      },
+      {
+        "dataset": "safeguard",
+        "source_split": "test",
+        "rows": 1
+      },
+      {
+        "dataset": "safeguard",
+        "source_split": "train",
+        "rows": 245
+      }
+    ],
+    "protected_boundaries_overlapping": [
+      {
+        "protected_test_dataset": "deepset",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 1,
+        "direct_exact_development_rows": 1,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "deepset",
+        "protected_source_split": "train",
+        "development_rows_in_touching_components": 9,
+        "direct_exact_development_rows": 4,
+        "near_or_transitive_only_development_rows": 5
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "train",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "validation",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "safeguard",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 232,
+        "direct_exact_development_rows": 79,
+        "near_or_transitive_only_development_rows": 153
+      }
+    ],
+    "rule": "quarantine missing/invalid rows, exact supplied-label conflicts, and every cross-dataset exact-overlap row; remove SafeGuard development rows in any full-input exact/near component touching released SafeGuard test or any external row; keep publisher SafeGuard test in test; pool all external source splits by dataset",
+    "split_rule": "first fold of StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=4371) on retained SafeGuard released train; exact/near connected component is the group",
+    "retained_development_rows": 7991,
+    "train_rows": 6400,
+    "validation_rows": 1591,
+    "validation_fraction_of_retained_development": 0.19909898635965462,
+    "groups": {
+      "test": 3654,
+      "train": 6246,
+      "validation": 1561
+    },
+    "leakage_checks": {
+      "train_rows_exact_match_deepset_test": 0,
+      "train_groups_overlap_deepset_test": 0,
+      "validation_groups_overlap_deepset_test": 0,
+      "train_rows_exact_match_gandalf_test": 0,
+      "train_groups_overlap_gandalf_test": 0,
+      "validation_groups_overlap_gandalf_test": 0,
+      "train_rows_exact_match_safeguard_test": 0,
+      "train_groups_overlap_safeguard_test": 0,
+      "validation_groups_overlap_safeguard_test": 0,
+      "train_rows_exact_match_validation": 0,
+      "train_groups_overlap_validation": 0
+    },
+    "same_partition_repetitions": "Within-partition exact/near repeats are retained; checker intervals resample rows and do not model template-group dependence.",
+    "related_entity_limit": "Entity IDs are unavailable; only measured exact/near text families can be grouped."
+  },
+  "split_counts": [
+    {
+      "dataset": "deepset",
+      "split": "test",
+      "rows": 656,
+      "positive": 258,
+      "negative": 398
+    },
+    {
+      "dataset": "gandalf",
+      "split": "test",
+      "rows": 1000,
+      "positive": 1000,
+      "negative": 0
+    },
+    {
+      "dataset": "safeguard",
+      "split": "test",
+      "rows": 2059,
+      "positive": 650,
+      "negative": 1409
+    },
+    {
+      "dataset": "safeguard",
+      "split": "train",
+      "rows": 6400,
+      "positive": 1917,
+      "negative": 4483
+    },
+    {
+      "dataset": "safeguard",
+      "split": "validation",
+      "rows": 1591,
+      "positive": 474,
+      "negative": 1117
+    }
+  ],
+  "baseline": {
+    "fit_seconds": 0.603718399986974,
+    "validation_score_seconds": 0.08173400000669062,
+    "test_score_seconds": 0.11892789999546949,
+    "threshold": 0.14544270512937266,
+    "threshold_repr": "0.14544270512937266",
+    "threshold_rule": "lowest candidate with validation FPR <= 0.05; candidates are unique validation probabilities plus nextafter(max_probability, +inf); positive iff score >= threshold",
+    "validation": {
+      "rows": 1591,
+      "positive_rows": 474,
+      "negative_rows": 1117,
+      "false_positives": 55,
+      "false_positive_rate": 0.049239033124440466,
+      "recall": 0.9978902953586498
+    },
+    "pipeline": {
+      "preprocessing": "model receives raw text; TfidfVectorizer lowercase=True, default Unicode word token pattern (?u)\\b\\w\\w+\\b; no accent stripping or audit normalization",
+      "representation": "TF-IDF word unigrams/bigrams; min_df=2; max_features=100000; sublinear_tf=True; smooth_idf=True; norm=l2; vocabulary and IDF fitted on training only",
+      "classifier": "LogisticRegression C=1, penalty=l2, solver=liblinear, class_weight=None, tol=1e-4, max_iter=2000, random_state=4371",
+      "fitted_vocabulary_size": 49857,
+      "solver_iterations": [
+        6
+      ],
+      "predictors_excluded": [
+        "dataset",
+        "source_split",
+        "label",
+        "similarity",
+        "row_id",
+        "group_id"
+      ]
+    },
+    "test_prediction_calls": 1,
+    "metrics": {
+      "deepset": {
+        "test_rows": 656,
+        "positive_rows": 258,
+        "negative_rows": 398,
+        "positive_percent": 39.329268292682926,
+        "random_scorer_AP": 0.3932926829268293,
+        "metrics": {
+          "recall": {
+            "value": 0.4108527131782946,
+            "ci95": [
+              0.35122311827956987,
+              0.47059959118782646
+            ]
+          },
+          "false-positive rate": {
+            "value": 0.06030150753768844,
+            "ci95": [
+              0.03825325785225929,
+              0.08393329780619949
+            ]
+          },
+          "precision": {
+            "value": 0.8153846153846154,
+            "ci95": [
+              0.743560606060606,
+              0.8813692779927933
+            ]
+          },
+          "AP": {
+            "value": 0.6903914164267726,
+            "ci95": [
+              0.6357935200388855,
+              0.7479931499325646
+            ]
+          },
+          "AUROC": {
+            "value": 0.7334735693973744,
+            "ci95": [
+              0.6932790538217275,
+              0.7729081706787226
+            ]
+          }
+        },
+        "f1": 0.5463917525773195,
+        "confusion_matrix_true_rows_0_1_pred_cols_0_1": [
+          [
+            374,
+            24
+          ],
+          [
+            152,
+            106
+          ]
+        ],
+        "one_class_report_only": null
+      },
+      "gandalf": {
+        "test_rows": 1000,
+        "positive_rows": 1000,
+        "negative_rows": 0,
+        "positive_percent": 100.0,
+        "random_scorer_AP": null,
+        "metrics": {
+          "recall": {
+            "value": 0.941,
+            "ci95": [
+              0.926,
+              0.9550249999999999
+            ]
+          },
+          "false-positive rate": {
+            "value": null,
+            "ci95": null
+          },
+          "precision": {
+            "value": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ]
+          },
+          "AP": {
+            "value": null,
+            "ci95": null
+          },
+          "AUROC": {
+            "value": null,
+            "ci95": null
+          }
+        },
+        "f1": null,
+        "confusion_matrix_true_rows_0_1_pred_cols_0_1": [
+          [
+            0,
+            0
+          ],
+          [
+            59,
+            941
+          ]
+        ],
+        "one_class_report_only": "detection rate (checker recall on presumed positives)"
+      },
+      "safeguard": {
+        "test_rows": 2059,
+        "positive_rows": 650,
+        "negative_rows": 1409,
+        "positive_percent": 31.568722680913062,
+        "random_scorer_AP": 0.31568722680913064,
+        "metrics": {
+          "recall": {
+            "value": 0.9969230769230769,
+            "ci95": [
+              0.9921129407419239,
+              1.0
+            ]
+          },
+          "false-positive rate": {
+            "value": 0.043293115684882894,
+            "ci95": [
+              0.032974076425983344,
+              0.05511365676089001
+            ]
+          },
+          "precision": {
+            "value": 0.9139633286318759,
+            "ci95": [
+              0.8918787171572686,
+              0.9349070942907508
+            ]
+          },
+          "AP": {
+            "value": 0.9988370666606399,
+            "ci95": [
+              0.9976202311436949,
+              0.9997113133978808
+            ]
+          },
+          "AUROC": {
+            "value": 0.9993503302942621,
+            "ci95": [
+              0.9986223859212506,
+              0.9998623687881195
+            ]
+          }
+        },
+        "f1": 0.9536423841059603,
+        "confusion_matrix_true_rows_0_1_pred_cols_0_1": [
+          [
+            1348,
+            61
+          ],
+          [
+            2,
+            648
+          ]
+        ],
+        "one_class_report_only": null
+      }
+    },
+    "bootstrap": {
+      "resamples": 1000,
+      "seed": 0,
+      "method": "unstratified row bootstrap, percentile 2.5/97.5; exact supplied checker implementation and test-set order"
+    },
+    "primary_metric_widest_ci_half_width": 0.059688236454128296
+  },
+  "checker_sha256": "c0706fb4f358314916ee6e4bd5cf7e761b7bdcf7734ea20b472b89c34a8110d8",
+  "checker": {
+    "returncode": 0,
+    "command": "python check_checkpoint.py --split split.csv --scores scores.csv --threshold \"0.14544270512937266\"",
+    "warnings": "- safeguard: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 3(e).",
+    "output_file": "checker_output.txt"
+  },
+  "elapsed_total_seconds": 14.46435150000616
+}

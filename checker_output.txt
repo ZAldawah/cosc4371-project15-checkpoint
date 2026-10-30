@@ -1,0 +1,52 @@
+split.csv: 11706 rows. scores.csv: 3715 rows.
+
+Rows per dataset and split
+--------------------------
+  dataset      split  rows  positive  negative  positive %
+  deepset       test   656       258       398       39.33
+  gandalf       test  1000      1000         0      100.00
+safeguard      train  6400      1917      4483       29.95
+safeguard validation  1591       474      1117       29.79
+safeguard       test  2059       650      1409       31.57
+
+Metrics per test set (threshold 0.14544270512937266; positive when score >= threshold)
+--------------------------------------------------------------------------------------
+Each value is followed by its 95% bootstrap interval in brackets.
+
+Test set: deepset
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7436, 0.8814]
+  recall                    0.4109 [0.3512, 0.4706]
+  false-positive rate       0.0603 [0.0383, 0.0839]
+  AP                        0.6904 [0.6358, 0.7480]
+  AUROC                     0.7335 [0.6933, 0.7729]
+
+Test set: gandalf
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9260, 0.9550]
+
+Test set: safeguard
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8919, 0.9349]
+  recall                    0.9969 [0.9921, 1.0000]
+  false-positive rate       0.0433 [0.0330, 0.0551]
+  AP                        0.9988 [0.9976, 0.9997]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Warnings
+--------
+- safeguard: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 3(e).
