@@ -53,11 +53,11 @@
     "exit_code": 0,
     "figure_generated": true,
     "pdf_pages": 8,
-    "exact_disclosure_occurrences": 1,
-    "disclosure_label_occurrences": 1,
+    "exact_reference_occurrences": 1,
+    "previous_disclosure_absent": true,
     "python": "3.12.14",
     "reportlab": "4.4.9",
-    "builder_sha256": "f6be9f78cbde81951d98e9e03ec3b060e93dcc77c2b4f8fe3c0f83df5ddfc083",
+    "builder_sha256": "59c414f5fa83fe7ccc3f390a135ef3271fe92f5b514cdff6cd60a1db2bacb511",
     "final_report_and_existing_measured_artifacts_not_modified": true
   },
   "verify_final_output_directory_review": "No additional issue: final output uses final_common.write_json, which creates parent directories. Its existing audit/result files are required inputs to verification."

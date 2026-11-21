@@ -9,9 +9,9 @@
     },
     {
       "path": "Aldawah_COSC4371_Final_Checkpoint.pdf",
-      "bytes": 67954,
-      "sha256": "a8a6763b17660928ff96072251625d094cc98a36f6d3b266102a1d0dce878a2e",
-      "git_blob_sha": "3981e441aa556e7a2cc744195d22a5438d437df7"
+      "bytes": 68214,
+      "sha256": "629ace8f08a06631bb926b4646d6105f1e08dc2e9e59e9d8115fa909818c1772",
+      "git_blob_sha": "e754d0c32f274fcb8d1a891a44111c7d7ded4d0c"
     },
     {
       "path": "assemble_results.py",
@@ -22,8 +22,8 @@
     {
       "path": "audit/code_directory_verification.json",
       "bytes": 2714,
-      "sha256": "44239fd7eda526efd809cb39b0f95572acae2f7fad214a0f347ede406688d39f",
-      "git_blob_sha": "297f6a43424c68bc2081148a1f0aaf23b6b8859d"
+      "sha256": "16ae7c879bcadc15e637d0df96676693931b5c340f05ec2be5d938066748739b",
+      "git_blob_sha": "87a08b98dfb429c2a41e9f685900152cd256a455"
     },
     {
       "path": "audit/design.json",
@@ -94,8 +94,8 @@
     {
       "path": "audit/report_prose_verification.json",
       "bytes": 725,
-      "sha256": "0b021bb3e537e10eb9a34519992fce545e7e5db71b191863c9af701df9a2073a",
-      "git_blob_sha": "364947955a4e7c4c925c2c003d6d3edd6caa97d7"
+      "sha256": "1ef68128268d50bcef840a898e2771f7fc85ad4cc9d6be619ad601e74271489c",
+      "git_blob_sha": "4b1304e0e4157af1546b5ffd5a0687c72016ad67"
     },
     {
       "path": "audit/source_provenance.json",
@@ -165,9 +165,9 @@
     },
     {
       "path": "build_final_report.py",
-      "bytes": 27267,
-      "sha256": "f6be9f78cbde81951d98e9e03ec3b060e93dcc77c2b4f8fe3c0f83df5ddfc083",
-      "git_blob_sha": "c7a09d1ae9528dfae26c338d6f8422f19c9a207f"
+      "bytes": 27557,
+      "sha256": "59c414f5fa83fe7ccc3f390a135ef3271fe92f5b514cdff6cd60a1db2bacb511",
+      "git_blob_sha": "43a81b0182b55bd28f422fbe015aee1074d33249"
     },
     {
       "path": "check_checkpoint.py",
@@ -231,9 +231,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 6489,
-      "sha256": "d59ef9584adc98715780908d3a2fdb2daa7a40fb20175c6d2096abb70b73d3e4",
-      "git_blob_sha": "7982ecebcdf8d337a081bac918329ef4eafabd3f"
+      "bytes": 6542,
+      "sha256": "fb45e2fab5ed38bb2301531e817043a8dcf3f0f6c5c5cab683ed2c35e17d5cb3",
+      "git_blob_sha": "2ee23fb3b86dcd3d1964dc62446e9c7f85173824"
     },
     {
       "path": "requirements.txt",
@@ -375,9 +375,9 @@
     },
     {
       "path": "test_report_prose.py",
-      "bytes": 11079,
-      "sha256": "ba3dcf36257b151abdf08ca84432018da6ddad35190a0a0fdc4282c367fa2819",
-      "git_blob_sha": "d3b01fe2326a7ab33e04f9ba282a11b53a269c8a"
+      "bytes": 11739,
+      "sha256": "3ce60ad1aa77188a5c29d900c86d1da56e970d5e784129cdaf643ea3cca34de7",
+      "git_blob_sha": "be92b4440b79110e85cf34bfb6e8f86709e38160"
     },
     {
       "path": "verify_data.py",

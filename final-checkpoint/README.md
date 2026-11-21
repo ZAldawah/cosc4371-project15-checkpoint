@@ -73,4 +73,4 @@ GPU training is seeded but permits nondeterministic-operation warnings; byte-ide
 
 ## AI disclosure
 
-AI was used in the organization, formatting, and structuring of this document.
+[5] OpenAI. ChatGPT/Codex, October 29, 2026. https://chatgpt.com/. AI assistance was used for formatting and verification purposes.

@@ -19,6 +19,7 @@ REPO='https://github.com/ZAldawah/cosc4371-project15-checkpoint'
 NAMES={'tfidf_lr':'TF-IDF + LR','distilbert':'DistilBERT','protectai':'ProtectAI v2',
        'safeguard':'Safe-Guard','deepset':'deepset','gandalf':'Gandalf*'}
 MODELS=['tfidf_lr','distilbert','protectai']
+AI_REFERENCE='[5] OpenAI. ChatGPT/Codex, October 29, 2026. https://chatgpt.com/. AI assistance was used for formatting and verification purposes.'
 
 def read(path): return json.loads((HERE/path).read_text(encoding='utf-8'))
 def f(value): return 'n/a' if value is None else f'{value:.4f}'
@@ -222,8 +223,9 @@ def main():
       ('DistilBERT base','https://huggingface.co/distilbert/distilbert-base-uncased'),
       ('ProtectAI v2 model card','https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2'),
       ('Qwen3-Embedding-0.6B','https://huggingface.co/Qwen/Qwen3-Embedding-0.6B')]
-    p('<b>Sources.</b> '+ '; '.join(f'[{i}] <link href="{url}">{title}</link>' for i,(title,url) in enumerate(sources,1))+'. [7] Bryan E. Tuck, COSC 4371 Week 10 L1 slides and demo, October 27, 2026. [8] Final Project Checkpoint, Fall 2026. Dataset hashes and full revisions are in data_manifest.json; model revisions are in their audits.','tiny')
-    p('<b>AI disclosure.</b> AI was used in the organization, formatting, and structuring of this document.','small')
+    p('<b>Sources.</b> '+ '; '.join(f'[{i}] <link href="{url}">{title}</link>' for i,(title,url) in enumerate(sources[:4],1))+'.','tiny')
+    p(AI_REFERENCE.replace('https://chatgpt.com/','<link href="https://chatgpt.com/" color="#205c91">https://chatgpt.com/</link>'),'tiny')
+    p('; '.join(f'[{i}] <link href="{url}">{title}</link>' for i,(title,url) in enumerate(sources[4:],6))+'. [8] Bryan E. Tuck, COSC 4371 Week 10 L1 slides and demo, October 27, 2026. [9] Final Project Checkpoint, Fall 2026. Dataset hashes and full revisions are in data_manifest.json; model revisions are in their audits.','tiny')
 
     story.append(PageBreak())
     h('Appendix B. Full primary-checker output')

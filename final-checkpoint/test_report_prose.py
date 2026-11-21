@@ -12,13 +12,16 @@ import sys
 import unittest
 
 import build_final_report as report
+from pypdf import PdfReader
 
 
 HERE = Path(__file__).resolve().parent
 SOURCE_HASH = hashlib.sha256((HERE / 'build_final_report.py').read_bytes()).hexdigest()
 MAIN = json.loads((HERE / 'results/main_metrics.json').read_text(encoding='utf-8'))
 EXTRA = json.loads((HERE / 'results/obfuscation_metrics.json').read_text(encoding='utf-8'))
-DISCLOSURE = 'AI was used in the organization, formatting, and structuring of this document.'
+DISCLOSURE = ('[5] OpenAI. ChatGPT/Codex, October 29, 2026. https://chatgpt.com/. '
+              'AI assistance was used for formatting and verification purposes.')
+PREVIOUS_DISCLOSURE = 'AI was used in the organization, formatting, and structuring of this document.'
 
 
 def indexed(rows):
@@ -194,8 +197,16 @@ class CounterfactualNormalization(unittest.TestCase):
         self.assertEqual(extra, original_extra)
 
     def test_requested_disclosure_is_preserved(self):
-        self.assertIn(DISCLOSURE, (HERE / 'build_final_report.py').read_text(encoding='utf-8'))
-        self.assertIn(DISCLOSURE, (HERE / 'README.md').read_text(encoding='utf-8'))
+        builder = (HERE / 'build_final_report.py').read_text(encoding='utf-8')
+        readme = (HERE / 'README.md').read_text(encoding='utf-8')
+        self.assertEqual(report.AI_REFERENCE, DISCLOSURE)
+        self.assertIn(DISCLOSURE, readme)
+        self.assertNotIn(PREVIOUS_DISCLOSURE, builder)
+        self.assertNotIn(PREVIOUS_DISCLOSURE, readme)
+        pages = PdfReader(HERE / 'Aldawah_COSC4371_Final_Checkpoint.pdf').pages
+        pdf_text = ' '.join(' '.join(page.extract_text() or '' for page in pages).split())
+        self.assertEqual(pdf_text.count(DISCLOSURE), 1)
+        self.assertNotIn(PREVIOUS_DISCLOSURE, pdf_text)
 
 
 if __name__ == '__main__':
