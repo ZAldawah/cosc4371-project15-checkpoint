@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "checks": {
+    "main_cells_complete": 9,
+    "main_score_rows": 11145,
+    "supplemental_cells_complete": 96,
+    "supplemental_score_rows": 146976,
+    "tfidf_lr_threshold_matches_validation": true,
+    "distilbert_threshold_matches_validation": true,
+    "protectai_threshold_matches_validation": true,
+    "error_sample_reproduced": true,
+    "summary_metrics_match_checker_text": true,
+    "pdf_primary_numbers_match_summary": true,
+    "full_checker_output_present_in_pdf": true,
+    "pdf_pages": 8,
+    "normalization_freeze_matches_source": true,
+    "full_data_audit_passed": true,
+    "strict_zero_shot_complete": true
+  }
+}

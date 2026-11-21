@@ -1,0 +1,48 @@
+{
+  "distilbert": {
+    "test": {
+      "rows": 3715,
+      "truncated_at_512": 68,
+      "median_tokens": 22.0,
+      "p95_tokens": 222.29999999999973,
+      "max_tokens": 1925
+    },
+    "train": {
+      "rows": 6400,
+      "truncated_at_512": 160,
+      "median_tokens": 33.0,
+      "p95_tokens": 360.09999999999854,
+      "max_tokens": 2675
+    },
+    "validation": {
+      "rows": 1591,
+      "truncated_at_512": 42,
+      "median_tokens": 32.0,
+      "p95_tokens": 360.0,
+      "max_tokens": 4811
+    }
+  },
+  "protectai": {
+    "test": {
+      "rows": 3715,
+      "truncated_at_512": 65,
+      "median_tokens": 21.0,
+      "p95_tokens": 218.0,
+      "max_tokens": 1833
+    },
+    "train": {
+      "rows": 6400,
+      "truncated_at_512": 153,
+      "median_tokens": 33.0,
+      "p95_tokens": 346.1499999999978,
+      "max_tokens": 2640
+    },
+    "validation": {
+      "rows": 1591,
+      "truncated_at_512": 41,
+      "median_tokens": 31.0,
+      "p95_tokens": 340.5,
+      "max_tokens": 4815
+    }
+  }
+}

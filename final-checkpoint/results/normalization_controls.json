@@ -1,0 +1,17 @@
+[
+  {
+    "model": "distilbert",
+    "clean_predictions_changed": 1,
+    "benign_clean_predictions_changed": 1
+  },
+  {
+    "model": "protectai",
+    "clean_predictions_changed": 0,
+    "benign_clean_predictions_changed": 0
+  },
+  {
+    "model": "tfidf_lr",
+    "clean_predictions_changed": 0,
+    "benign_clean_predictions_changed": 0
+  }
+]

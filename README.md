@@ -1,3 +1,7 @@
+**Final checkpoint:** [Report, code, and results](final-checkpoint/) | [Final report PDF](final-checkpoint/Aldawah_COSC4371_Final_Checkpoint.pdf)
+
+---
+
 # COSC 4371 Project 15: midsemester checkpoint
 
 Zainulabdeen Aldawah — prompt-injection detection across datasets.

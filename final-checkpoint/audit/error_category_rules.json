@@ -1,0 +1,11 @@
+{
+  "selection": "10 random false positives and 10 random false negatives from clean deepset / tfidf_lr; NumPy default_rng(4371), sorted row IDs, FP then FN without replacement",
+  "review": "Categories describe visible text characteristics, not proven causal explanations for each prediction. Source labels are retained.",
+  "rules_in_priority_order": [
+    {"category": "non_english_or_mixed", "name": "Non-English or mixed-language text", "rule": "The prompt contains a substantive non-English request, including mixed-language requests."},
+    {"category": "character_spaced_instruction", "name": "Character-spaced instruction", "rule": "The English instruction is broken into individual letters separated by spaces."},
+    {"category": "english_political_question", "name": "English political question", "rule": "The English prompt asks about a political person, political judgment, or territorial conflict."},
+    {"category": "english_information_query", "name": "English information query", "rule": "The English prompt requests nonpolitical factual or practical information without a visible instruction override."},
+    {"category": "english_task_or_output_redirection", "name": "English task/output redirection", "rule": "The English prompt steers the next answer toward a specified output or new task without explicitly asking to ignore prior instructions."}
+  ]
+}

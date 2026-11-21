@@ -1,0 +1,46 @@
+{
+  "distilbert": {
+    "rows": 29720,
+    "views": [
+      "base64",
+      "clean",
+      "homoglyph",
+      "normalized_base64",
+      "normalized_clean",
+      "normalized_homoglyph",
+      "normalized_zero_width",
+      "zero_width"
+    ],
+    "all_original_test_ids_and_labels_preserved": true,
+    "finite_probabilities": true,
+    "fixed_threshold": 0.0005213362746872,
+    "sha256": "f129306e7db6a47458fadb52af77a1c7c9a15c0b48b77617750974e3dadfcbcb",
+    "validation_false_positives": 55,
+    "clean_csv_metrics_match_audit": true
+  },
+  "protectai": {
+    "rows": 29720,
+    "views": [
+      "base64",
+      "clean",
+      "homoglyph",
+      "normalized_base64",
+      "normalized_clean",
+      "normalized_homoglyph",
+      "normalized_zero_width",
+      "zero_width"
+    ],
+    "all_original_test_ids_and_labels_preserved": true,
+    "finite_probabilities": true,
+    "fixed_threshold": 2.7969301299890503e-05,
+    "sha256": "bb535f287372f32bbea4079c43355c1a95d4bc932f848d284a33812be58cba5f",
+    "validation_false_positives": 55,
+    "clean_csv_metrics_match_audit": true
+  },
+  "guard_tests": {
+    "accepted_frozen_source_passed": true,
+    "unaccepted_or_stale_source_rejected": true,
+    "changed_cached_training_epochs_rejected": true,
+    "training_math_unchanged_by_guard_refactor": true
+  }
+}

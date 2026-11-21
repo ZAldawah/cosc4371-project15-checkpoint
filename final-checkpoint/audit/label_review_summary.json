@@ -1,0 +1,124 @@
+{
+  "status": "done",
+  "review_date": "2026-11-20",
+  "seed": 4371,
+  "reviewed_rows": 150,
+  "sampling": "For each of safeguard/0, safeguard/1, deepset/0, deepset/1, gandalf/1: retained rows across all partitions sorted by row_id, pandas sample(n=30, random_state=4371), then sort selected IDs for review. The same seed is reset independently in each stratum.",
+  "scope": "Qualitative label and text-shortcut audit only; every selected original prompt was read in full. No source label, split, model, threshold, or transformation was changed.",
+  "assessment_definitions": {
+    "supported": "Visible text is consistent with the supplied broad benign/injection class; this is not proof of intent, model behavior, or an independently adjudicated ground-truth label.",
+    "ambiguous": "Visible text alone does not clearly establish the supplied class, for example ordinary roleplay, quoted instruction-like content, or incomplete context.",
+    "presumed_only": "Gandalf has no supplied binary target. The positive label remains a dataset-level presumption even when the text visibly requests overriding instructions."
+  },
+  "strata": [
+    {
+      "dataset": "safeguard",
+      "source_label": 0,
+      "reviewed": 30,
+      "assessments": {
+        "supported": 30
+      },
+      "observed_languages": {
+        "English": 30
+      }
+    },
+    {
+      "dataset": "safeguard",
+      "source_label": 1,
+      "reviewed": 30,
+      "assessments": {
+        "supported": 23,
+        "ambiguous": 7
+      },
+      "observed_languages": {
+        "English": 30
+      }
+    },
+    {
+      "dataset": "deepset",
+      "source_label": 0,
+      "reviewed": 30,
+      "assessments": {
+        "supported": 29,
+        "ambiguous": 1
+      },
+      "observed_languages": {
+        "English": 15,
+        "German": 15
+      }
+    },
+    {
+      "dataset": "deepset",
+      "source_label": 1,
+      "reviewed": 30,
+      "assessments": {
+        "supported": 22,
+        "ambiguous": 8
+      },
+      "observed_languages": {
+        "English/German": 9,
+        "English": 15,
+        "German": 3,
+        "German/Turkish": 1,
+        "French": 1,
+        "English/Greek": 1
+      }
+    },
+    {
+      "dataset": "gandalf",
+      "source_label": 1,
+      "reviewed": 30,
+      "assessments": {
+        "presumed_only": 30
+      },
+      "observed_languages": {
+        "English": 30
+      }
+    }
+  ],
+  "assessment_counts": {
+    "supported": 104,
+    "ambiguous": 16,
+    "presumed_only": 30
+  },
+  "partition_counts": {
+    "test": 102,
+    "train": 36,
+    "validation": 12
+  },
+  "shortcut_counts": {
+    "general_question": 33,
+    "structured_benchmark": 20,
+    "quoted_instruction": 8,
+    "coding_task": 2,
+    "explicit_override": 38,
+    "context_dependent_role": 5,
+    "coercive_disclosure": 5,
+    "jailbreak_persona": 5,
+    "sensitive_disclosure": 3,
+    "topic_fragment": 3,
+    "incomplete_text": 1,
+    "appended_redirection": 11,
+    "context_dependent_task": 7,
+    "internal_extraction": 7,
+    "task_switch": 2
+  },
+  "findings": [
+    "Safe-Guard sampled negatives often use structured QA, inference, classification, or summarization templates. Sampled positives often use explicit prior-instruction overrides, confidential-data requests, coercion, or extended jailbreak personas. These visible style differences are possible shortcuts, not a demonstrated causal explanation for the score ceiling.",
+    "Several Safe-Guard positive examples request stories, poems, or roleplay containing instruction-like language; their supplied class is ambiguous without application context.",
+    "The deepset sample contains German and mixed-language text, short topic fragments, and appended task changes. These differences provide plausible transfer limitations for models trained on mostly English Safe-Guard examples.",
+    "Some deepset positive labels attach to ordinary-looking role or task requests whose malicious status requires missing application context. One sampled negative is an incomplete sentence.",
+    "Gandalf examples frequently request prior-instruction or password disclosure. Some are only questions about instructions, so collection membership does not independently establish malicious intent for every prompt."
+  ],
+  "limitations": [
+    "This is a small stratified descriptive sample, not a population-weighted annotation-quality or relabeling-precision estimate.",
+    "The inspection was not blinded to supplied label or dataset and has no independent second-rater adjudication.",
+    "Observed language is a rough content-based annotation, including short embedded passages; no language-identification benchmark was run.",
+    "Missing application, system-prompt, conversation, and authorization context can make legitimate user requests resemble injections.",
+    "The audit includes training and validation examples solely to inspect data quality and shortcuts; it was not used for model or threshold selection.",
+    "Style counts do not establish that a trained classifier uses those cues; controlled ablation or matched-context evaluation would be needed."
+  ],
+  "public_prompt_text_included": false,
+  "source_labels_changed": 0,
+  "csv_sha256": "22d9f9ab5d12180570922780297e149bf7f415aec1e6a09f9b671aedf0332f7b"
+}

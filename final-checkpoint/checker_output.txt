@@ -1,0 +1,184 @@
+split.csv: 11706 rows. scores.csv: 11145 rows, 3 value(s), 3 column(s).
+Values: safeguard, deepset, gandalf
+
+Rows per dataset and split
+--------------------------
+  dataset      split  rows  positive  negative  positive %
+  deepset       test   656       258       398       39.33
+  gandalf       test  1000      1000         0      100.00
+safeguard      train  6400      1917      4483       29.95
+safeguard validation  1591       474      1117       29.79
+safeguard       test  2059       650      1409       31.57
+
+Metrics per value and column (positive when score >= the threshold)
+-------------------------------------------------------------------
+Each value is followed by its 95% bootstrap interval in brackets.
+
+Value: deepset   Column: tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7463, 0.8793]
+  recall                    0.4109 [0.3534, 0.4691]
+  false-positive rate       0.0603 [0.0378, 0.0848]
+  AP                        0.6904 [0.6349, 0.7450]
+  AUROC                     0.7335 [0.6915, 0.7726]
+
+Value: gandalf   Column: tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9250, 0.9550]
+
+Value: safeguard   Column: tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8931, 0.9341]
+  recall                    0.9969 [0.9924, 1.0000]
+  false-positive rate       0.0433 [0.0329, 0.0542]
+  AP                        0.9988 [0.9976, 0.9998]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: deepset   Column: distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4205, 0.5138]
+  recall                    0.7791 [0.7292, 0.8293]
+  false-positive rate       0.5779 [0.5256, 0.6268]
+  AP                        0.6871 [0.6342, 0.7323]
+  AUROC                     0.7040 [0.6607, 0.7434]
+
+Value: gandalf   Column: distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9880]
+
+Value: safeguard   Column: distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8877 [0.8644, 0.9101]
+  recall                    0.9969 [0.9923, 1.0000]
+  false-positive rate       0.0582 [0.0456, 0.0713]
+  AP                        0.9995 [0.9988, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: deepset   Column: protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8641, 0.9420]
+  recall                    0.7016 [0.6471, 0.7600]
+  false-positive rate       0.0477 [0.0281, 0.0698]
+  AP                        0.8806 [0.8475, 0.9111]
+  AUROC                     0.8849 [0.8551, 0.9118]
+
+Value: gandalf   Column: protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: safeguard   Column: protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8522, 0.9024]
+  recall                    0.9754 [0.9632, 0.9866]
+  false-positive rate       0.0625 [0.0500, 0.0759]
+  AP                        0.9880 [0.9825, 0.9924]
+  AUROC                     0.9921 [0.9876, 0.9957]
+
+Results table: recall [95% interval] (copy into section 1(d))
+-------------------------------------------------------------
+A one-class cell holds the metric the checker prints for it, named in parentheses.
+
+Column: tfidf_lr
+  safeguard   0.9969 [0.9924, 1.0000]
+  deepset     0.4109 [0.3534, 0.4691]
+  gandalf     0.9410 [0.9250, 0.9550]
+
+Column: distilbert
+  safeguard   0.9969 [0.9923, 1.0000]
+  deepset     0.7791 [0.7292, 0.8293]
+  gandalf     0.9800 [0.9710, 0.9880]
+
+Column: protectai
+  safeguard   0.9754 [0.9632, 0.9866]
+  deepset     0.7016 [0.6471, 0.7600]
+  gandalf     1.0000 [1.0000, 1.0000]
+
+Difference from the baseline value 'safeguard' (copy into section 1(e))
+-----------------------------------------------------------------------
+Difference = the value's metric minus the baseline value's metric in the same column.
+Direction of interest: lower. Change = the difference with its sign flipped, so a drop is positive.
+The verdict in section 1(e) compares the change with your yes and no differences.
+
+Column: tfidf_lr
+  deepset     difference -0.5861   change +0.5861 (recall)
+  gandalf     difference -0.0559   change +0.0559 (recall)
+
+Column: distilbert
+  deepset     difference -0.2179   change +0.2179 (recall)
+  gandalf     difference -0.0169   change +0.0169 (recall)
+
+Column: protectai
+  deepset     difference -0.2738   change +0.2738 (recall)
+  gandalf     difference +0.0246   change -0.0246 (recall)
+
+Error sample (section 4)
+------------------------
+Value: deepset   Column: tfidf_lr
+  misclassified rows available   24 false positives, 152 false negatives
+  sampled                        10 false positives, 10 false negatives
+
+error                               false positive  false negative  total
+category                                                                 
+non_english_or_mixed                             4               7     11
+english_political_question                       3               0      3
+english_information_query                        3               0      3
+english_task_or_output_redirection               0               2      2
+character_spaced_instruction                     0               1      1
+
+Warnings
+--------
+- value safeguard, column tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value safeguard, column distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value gandalf, column protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value safeguard, column protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).

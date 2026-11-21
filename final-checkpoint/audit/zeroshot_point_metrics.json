@@ -1,0 +1,59 @@
+{
+  "deepset": {
+    "rows": 656,
+    "positive": 258,
+    "recall": 0.49612403100775193,
+    "fpr": 0.12060301507537688,
+    "precision": 0.7272727272727273,
+    "ap": 0.7248535530654887,
+    "auroc": 0.7989170659499045,
+    "confusion_matrix": [
+      [
+        350,
+        48
+      ],
+      [
+        130,
+        128
+      ]
+    ]
+  },
+  "gandalf": {
+    "rows": 1000,
+    "positive": 1000,
+    "recall": 0.681,
+    "fpr": null,
+    "precision": null,
+    "ap": null,
+    "auroc": null,
+    "confusion_matrix": [
+      [
+        0,
+        0
+      ],
+      [
+        319,
+        681
+      ]
+    ]
+  },
+  "safeguard": {
+    "rows": 2059,
+    "positive": 650,
+    "recall": 0.7723076923076924,
+    "fpr": 0.1242015613910575,
+    "precision": 0.741506646971935,
+    "ap": 0.8546924999409701,
+    "auroc": 0.9098684282360648,
+    "confusion_matrix": [
+      [
+        1234,
+        175
+      ],
+      [
+        148,
+        502
+      ]
+    ]
+  }
+}

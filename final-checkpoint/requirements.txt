@@ -1,0 +1,18 @@
+# Python 3.12. Install CUDA torch first as documented for the measured GPU setup.
+numpy==2.3.5
+pandas==3.0.1
+scipy==1.18.1
+scikit-learn==1.7.2
+pyarrow==22.0.0
+matplotlib==3.10.7
+joblib==1.6.0
+threadpoolctl==3.7.0
+torch==2.9.1
+transformers==4.57.1
+huggingface-hub==0.36.0
+tokenizers==0.22.2
+safetensors==0.8.0
+sentencepiece==0.2.1
+protobuf==6.33.0
+reportlab==4.4.9
+pypdf==6.10.0

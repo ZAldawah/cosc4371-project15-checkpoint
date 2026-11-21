@@ -1,0 +1,13 @@
+{
+  "source_only_copy": true,
+  "existing_data_cache_sha256_verified": true,
+  "fresh_training_and_scoring": true,
+  "byte_equal_outputs": {
+    "results/tfidf_lr_scores.csv": true,
+    "results/tfidf_lr_validation.csv": true,
+    ".local/error_sample_for_review.json": true,
+    "audit/normalization_freeze.json": true
+  },
+  "transformer_retraining_not_repeated": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+}

@@ -1,0 +1,1542 @@
+
+Metrics per value and column (positive when score >= the threshold)
+-------------------------------------------------------------------
+Each value is followed by its 95% bootstrap interval in brackets.
+
+Value: clean   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7457, 0.8781]
+  recall                    0.4109 [0.3537, 0.4750]
+  false-positive rate       0.0603 [0.0390, 0.0851]
+  AP                        0.6904 [0.6320, 0.7500]
+  AUROC                     0.7335 [0.6927, 0.7735]
+
+Value: zero_width   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.3933 [0.3567, 0.4314]
+  AUROC                     0.5000 [0.5000, 0.5000]
+
+Value: homoglyph   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.7429 [0.5945, 0.8810]
+  recall                    0.1008 [0.0656, 0.1354]
+  false-positive rate       0.0226 [0.0078, 0.0371]
+  AP                        0.4571 [0.4075, 0.5144]
+  AUROC                     0.5418 [0.4990, 0.5841]
+
+Value: base64   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.3924 [0.3557, 0.4251]
+  AUROC                     0.4981 [0.4939, 0.5000]
+
+Value: normalized_clean   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7438, 0.8740]
+  recall                    0.4109 [0.3516, 0.4675]
+  false-positive rate       0.0603 [0.0393, 0.0836]
+  AP                        0.6904 [0.6284, 0.7483]
+  AUROC                     0.7335 [0.6930, 0.7730]
+
+Value: normalized_zero_width   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7500, 0.8790]
+  recall                    0.4109 [0.3539, 0.4749]
+  false-positive rate       0.0603 [0.0377, 0.0840]
+  AP                        0.6904 [0.6372, 0.7510]
+  AUROC                     0.7335 [0.6917, 0.7695]
+
+Value: normalized_homoglyph   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7447, 0.8810]
+  recall                    0.4109 [0.3508, 0.4695]
+  false-positive rate       0.0603 [0.0376, 0.0851]
+  AP                        0.6904 [0.6322, 0.7542]
+  AUROC                     0.7335 [0.6937, 0.7737]
+
+Value: normalized_base64   Column: deepset__tfidf_lr
+  threshold                 0.145443
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8154 [0.7464, 0.8803]
+  recall                    0.4109 [0.3517, 0.4674]
+  false-positive rate       0.0603 [0.0383, 0.0835]
+  AP                        0.6904 [0.6351, 0.7464]
+  AUROC                     0.7335 [0.6963, 0.7716]
+
+Value: clean   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9260, 0.9550]
+
+Value: zero_width   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.0000 [0.0000, 0.0000]
+
+Value: homoglyph   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.1070 [0.0880, 0.1270]
+
+Value: base64   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.0000 [0.0000, 0.0000]
+
+Value: normalized_clean   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9260, 0.9560]
+
+Value: normalized_zero_width   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9260, 0.9550]
+
+Value: normalized_homoglyph   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9270, 0.9560]
+
+Value: normalized_base64   Column: gandalf__tfidf_lr
+  threshold                 0.145443
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9410 [0.9260, 0.9550]
+
+Value: clean   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8936, 0.9326]
+  recall                    0.9969 [0.9921, 1.0000]
+  false-positive rate       0.0433 [0.0335, 0.0531]
+  AP                        0.9988 [0.9975, 0.9997]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: zero_width   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.3168 [0.2982, 0.3377]
+  AUROC                     0.5025 [0.5007, 0.5046]
+
+Value: homoglyph   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.7441 [0.7051, 0.7793]
+  recall                    0.6754 [0.6389, 0.7112]
+  false-positive rate       0.1072 [0.0909, 0.1229]
+  AP                        0.7803 [0.7476, 0.8104]
+  AUROC                     0.8797 [0.8634, 0.8961]
+
+Value: base64   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.3157 [0.2948, 0.3366]
+  AUROC                     0.5000 [0.5000, 0.5000]
+
+Value: normalized_clean   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8929, 0.9340]
+  recall                    0.9969 [0.9923, 1.0000]
+  false-positive rate       0.0433 [0.0333, 0.0542]
+  AP                        0.9988 [0.9976, 0.9997]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: normalized_zero_width   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8923, 0.9330]
+  recall                    0.9969 [0.9922, 1.0000]
+  false-positive rate       0.0433 [0.0333, 0.0543]
+  AP                        0.9988 [0.9975, 0.9998]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: normalized_homoglyph   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8929, 0.9341]
+  recall                    0.9969 [0.9923, 1.0000]
+  false-positive rate       0.0433 [0.0327, 0.0544]
+  AP                        0.9988 [0.9976, 0.9997]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: normalized_base64   Column: safeguard__tfidf_lr
+  threshold                 0.145443
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9140 [0.8917, 0.9327]
+  recall                    0.9969 [0.9921, 1.0000]
+  false-positive rate       0.0433 [0.0335, 0.0548]
+  AP                        0.9988 [0.9976, 0.9997]
+  AUROC                     0.9994 [0.9986, 0.9999]
+
+Value: clean   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9391 [0.9240, 0.9539]
+  recall                    0.9410 [0.9268, 0.9549]
+  false-positive rate       0.0433 [0.0332, 0.0550]
+  AP                        0.9868 [0.9826, 0.9902]
+  AUROC                     0.9888 [0.9848, 0.9921]
+
+Value: zero_width   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.4163 [0.3972, 0.4358]
+  AUROC                     0.5025 [0.5007, 0.5046]
+
+Value: homoglyph   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4147 [0.3548, 0.4807]
+  recall                    0.1070 [0.0895, 0.1260]
+  false-positive rate       0.1072 [0.0912, 0.1246]
+  AP                        0.5942 [0.5678, 0.6270]
+  AUROC                     0.6883 [0.6668, 0.7095]
+
+Value: base64   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 undefined (no row scored at or above the threshold)
+  recall                    0.0000 [0.0000, 0.0000]
+  false-positive rate       0.0000 [0.0000, 0.0000]
+  AP                        0.4151 [0.3944, 0.4346]
+  AUROC                     0.5000 [0.5000, 0.5000]
+
+Value: normalized_clean   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9391 [0.9233, 0.9529]
+  recall                    0.9410 [0.9262, 0.9546]
+  false-positive rate       0.0433 [0.0332, 0.0538]
+  AP                        0.9868 [0.9829, 0.9902]
+  AUROC                     0.9888 [0.9847, 0.9919]
+
+Value: normalized_zero_width   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9391 [0.9236, 0.9531]
+  recall                    0.9410 [0.9256, 0.9546]
+  false-positive rate       0.0433 [0.0336, 0.0543]
+  AP                        0.9868 [0.9827, 0.9901]
+  AUROC                     0.9888 [0.9848, 0.9920]
+
+Value: normalized_homoglyph   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9391 [0.9254, 0.9531]
+  recall                    0.9410 [0.9258, 0.9552]
+  false-positive rate       0.0433 [0.0332, 0.0530]
+  AP                        0.9868 [0.9830, 0.9904]
+  AUROC                     0.9888 [0.9848, 0.9920]
+
+Value: normalized_base64   Column: gandalf_mixed__tfidf_lr
+  threshold                 0.145443
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9391 [0.9235, 0.9538]
+  recall                    0.9410 [0.9267, 0.9548]
+  false-positive rate       0.0433 [0.0329, 0.0545]
+  AP                        0.9868 [0.9826, 0.9903]
+  AUROC                     0.9888 [0.9848, 0.9923]
+
+Value: clean   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4182, 0.5138]
+  recall                    0.7791 [0.7265, 0.8272]
+  false-positive rate       0.5779 [0.5283, 0.6206]
+  AP                        0.6871 [0.6399, 0.7378]
+  AUROC                     0.7040 [0.6627, 0.7439]
+
+Value: zero_width   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4231, 0.5179]
+  recall                    0.7791 [0.7302, 0.8279]
+  false-positive rate       0.5779 [0.5285, 0.6220]
+  AP                        0.6871 [0.6365, 0.7365]
+  AUROC                     0.7040 [0.6661, 0.7430]
+
+Value: homoglyph   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3939 [0.3567, 0.4305]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.9975 [0.9922, 1.0000]
+  AP                        0.6890 [0.6297, 0.7486]
+  AUROC                     0.7758 [0.7383, 0.8119]
+
+Value: base64   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3933 [0.3567, 0.4299]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.3352 [0.2988, 0.3785]
+  AUROC                     0.3783 [0.3345, 0.4210]
+
+Value: normalized_zero_width   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4212, 0.5149]
+  recall                    0.7791 [0.7262, 0.8308]
+  false-positive rate       0.5779 [0.5290, 0.6247]
+  AP                        0.6869 [0.6366, 0.7350]
+  AUROC                     0.7040 [0.6630, 0.7419]
+
+Value: normalized_homoglyph   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4191, 0.5146]
+  recall                    0.7791 [0.7262, 0.8280]
+  false-positive rate       0.5779 [0.5311, 0.6244]
+  AP                        0.6869 [0.6338, 0.7348]
+  AUROC                     0.7040 [0.6636, 0.7457]
+
+Value: normalized_base64   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4186, 0.5139]
+  recall                    0.7791 [0.7239, 0.8245]
+  false-positive rate       0.5779 [0.5304, 0.6279]
+  AP                        0.6869 [0.6346, 0.7358]
+  AUROC                     0.7040 [0.6605, 0.7409]
+
+Value: normalized_clean   Column: deepset__distilbert
+  threshold                 0.000521336
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4664 [0.4161, 0.5154]
+  recall                    0.7791 [0.7283, 0.8277]
+  false-positive rate       0.5779 [0.5280, 0.6283]
+  AP                        0.6869 [0.6361, 0.7350]
+  AUROC                     0.7040 [0.6621, 0.7446]
+
+Value: clean   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9880]
+
+Value: zero_width   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9880]
+
+Value: homoglyph   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: base64   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: normalized_zero_width   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9720, 0.9880]
+
+Value: normalized_homoglyph   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9890]
+
+Value: normalized_base64   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9880]
+
+Value: normalized_clean   Column: gandalf__distilbert
+  threshold                 0.000521336
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9800 [0.9710, 0.9880]
+
+Value: clean   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8877 [0.8651, 0.9095]
+  recall                    0.9969 [0.9923, 1.0000]
+  false-positive rate       0.0582 [0.0470, 0.0706]
+  AP                        0.9995 [0.9988, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: zero_width   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8877 [0.8636, 0.9110]
+  recall                    0.9969 [0.9921, 1.0000]
+  false-positive rate       0.0582 [0.0459, 0.0706]
+  AP                        0.9995 [0.9987, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: homoglyph   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3157 [0.2953, 0.3346]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.4781 [0.4431, 0.5172]
+  AUROC                     0.7455 [0.7252, 0.7641]
+
+Value: base64   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3157 [0.2943, 0.3366]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.2686 [0.2495, 0.2903]
+  AUROC                     0.3911 [0.3669, 0.4177]
+
+Value: normalized_zero_width   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8865 [0.8633, 0.9103]
+  recall                    0.9969 [0.9920, 1.0000]
+  false-positive rate       0.0589 [0.0462, 0.0712]
+  AP                        0.9995 [0.9987, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: normalized_homoglyph   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8865 [0.8624, 0.9096]
+  recall                    0.9969 [0.9921, 1.0000]
+  false-positive rate       0.0589 [0.0464, 0.0721]
+  AP                        0.9995 [0.9988, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: normalized_base64   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8865 [0.8638, 0.9069]
+  recall                    0.9969 [0.9922, 1.0000]
+  false-positive rate       0.0589 [0.0477, 0.0717]
+  AP                        0.9995 [0.9987, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: normalized_clean   Column: safeguard__distilbert
+  threshold                 0.000521336
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8865 [0.8615, 0.9086]
+  recall                    0.9969 [0.9922, 1.0000]
+  false-positive rate       0.0589 [0.0473, 0.0719]
+  AP                        0.9995 [0.9987, 1.0000]
+  AUROC                     0.9997 [0.9993, 1.0000]
+
+Value: clean   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9228 [0.9062, 0.9385]
+  recall                    0.9800 [0.9704, 0.9883]
+  false-positive rate       0.0582 [0.0459, 0.0710]
+  AP                        0.9942 [0.9917, 0.9963]
+  AUROC                     0.9947 [0.9921, 0.9969]
+
+Value: zero_width   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9228 [0.9053, 0.9377]
+  recall                    0.9800 [0.9710, 0.9879]
+  false-positive rate       0.0582 [0.0470, 0.0713]
+  AP                        0.9942 [0.9917, 0.9963]
+  AUROC                     0.9947 [0.9918, 0.9968]
+
+Value: homoglyph   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4151 [0.3956, 0.4334]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.4062 [0.3840, 0.4300]
+  AUROC                     0.5575 [0.5330, 0.5785]
+
+Value: base64   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4151 [0.3952, 0.4350]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.4470 [0.4200, 0.4755]
+  AUROC                     0.5603 [0.5368, 0.5842]
+
+Value: normalized_zero_width   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9219 [0.9054, 0.9373]
+  recall                    0.9800 [0.9703, 0.9888]
+  false-positive rate       0.0589 [0.0474, 0.0717]
+  AP                        0.9942 [0.9915, 0.9962]
+  AUROC                     0.9947 [0.9919, 0.9968]
+
+Value: normalized_homoglyph   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9219 [0.9043, 0.9390]
+  recall                    0.9800 [0.9710, 0.9881]
+  false-positive rate       0.0589 [0.0463, 0.0726]
+  AP                        0.9942 [0.9917, 0.9963]
+  AUROC                     0.9947 [0.9919, 0.9969]
+
+Value: normalized_base64   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9219 [0.9038, 0.9373]
+  recall                    0.9800 [0.9704, 0.9883]
+  false-positive rate       0.0589 [0.0473, 0.0730]
+  AP                        0.9942 [0.9917, 0.9963]
+  AUROC                     0.9947 [0.9919, 0.9968]
+
+Value: normalized_clean   Column: gandalf_mixed__distilbert
+  threshold                 0.000521336
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9219 [0.9064, 0.9377]
+  recall                    0.9800 [0.9707, 0.9885]
+  false-positive rate       0.0589 [0.0468, 0.0710]
+  AP                        0.9942 [0.9918, 0.9963]
+  AUROC                     0.9947 [0.9921, 0.9968]
+
+Value: clean   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8624, 0.9466]
+  recall                    0.7016 [0.6403, 0.7594]
+  false-positive rate       0.0477 [0.0258, 0.0688]
+  AP                        0.8806 [0.8494, 0.9102]
+  AUROC                     0.8849 [0.8549, 0.9135]
+
+Value: zero_width   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3933 [0.3552, 0.4299]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.6951 [0.6378, 0.7509]
+  AUROC                     0.7738 [0.7383, 0.8100]
+
+Value: homoglyph   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4012 [0.3647, 0.4387]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.9673 [0.9497, 0.9836]
+  AP                        0.6746 [0.6155, 0.7338]
+  AUROC                     0.7789 [0.7433, 0.8153]
+
+Value: base64   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3933 [0.3567, 0.4314]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.2883 [0.2554, 0.3244]
+  AUROC                     0.3045 [0.2650, 0.3464]
+
+Value: normalized_zero_width   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8592, 0.9468]
+  recall                    0.7016 [0.6470, 0.7578]
+  false-positive rate       0.0477 [0.0264, 0.0718]
+  AP                        0.8806 [0.8484, 0.9113]
+  AUROC                     0.8849 [0.8545, 0.9125]
+
+Value: normalized_homoglyph   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8670, 0.9445]
+  recall                    0.7016 [0.6461, 0.7576]
+  false-positive rate       0.0477 [0.0270, 0.0689]
+  AP                        0.8806 [0.8495, 0.9093]
+  AUROC                     0.8849 [0.8569, 0.9120]
+
+Value: normalized_base64   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8622, 0.9448]
+  recall                    0.7016 [0.6455, 0.7579]
+  false-positive rate       0.0477 [0.0278, 0.0690]
+  AP                        0.8806 [0.8497, 0.9099]
+  AUROC                     0.8849 [0.8536, 0.9130]
+
+Value: normalized_clean   Column: deepset__protectai
+  threshold                 2.79693e-05
+  test rows                 656
+  positive rows             258 (39.33%)
+  negative rows             398 (60.67%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3933 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9050 [0.8654, 0.9426]
+  recall                    0.7016 [0.6432, 0.7536]
+  false-positive rate       0.0477 [0.0283, 0.0688]
+  AP                        0.8806 [0.8462, 0.9091]
+  AUROC                     0.8849 [0.8543, 0.9106]
+
+Value: clean   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: zero_width   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: homoglyph   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    0.9990 [0.9970, 1.0000]
+
+Value: base64   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: normalized_zero_width   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: normalized_homoglyph   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: normalized_base64   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: normalized_clean   Column: gandalf__protectai
+  threshold                 2.79693e-05
+  test rows                 1000
+  positive rows             1000 (100.00%)
+  negative rows             0 (0.00%)
+  bootstrap resamples       1000
+  one class only (positive): report recall only
+  recall                    1.0000 [1.0000, 1.0000]
+
+Value: clean   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8565, 0.9014]
+  recall                    0.9754 [0.9625, 0.9869]
+  false-positive rate       0.0625 [0.0505, 0.0747]
+  AP                        0.9880 [0.9830, 0.9925]
+  AUROC                     0.9921 [0.9879, 0.9956]
+
+Value: zero_width   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3157 [0.2967, 0.3341]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.2639 [0.2445, 0.2864]
+  AUROC                     0.4276 [0.4033, 0.4535]
+
+Value: homoglyph   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3183 [0.2977, 0.3382]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.9879 [0.9820, 0.9936]
+  AP                        0.8178 [0.7846, 0.8496]
+  AUROC                     0.9188 [0.9067, 0.9312]
+
+Value: base64   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.3157 [0.2953, 0.3361]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.3105 [0.2865, 0.3350]
+  AUROC                     0.5057 [0.4792, 0.5330]
+
+Value: normalized_zero_width   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8542, 0.9019]
+  recall                    0.9754 [0.9630, 0.9862]
+  false-positive rate       0.0625 [0.0495, 0.0754]
+  AP                        0.9880 [0.9827, 0.9921]
+  AUROC                     0.9921 [0.9878, 0.9954]
+
+Value: normalized_homoglyph   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8541, 0.9009]
+  recall                    0.9754 [0.9622, 0.9859]
+  false-positive rate       0.0625 [0.0503, 0.0751]
+  AP                        0.9880 [0.9826, 0.9923]
+  AUROC                     0.9921 [0.9876, 0.9955]
+
+Value: normalized_base64   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8534, 0.9035]
+  recall                    0.9754 [0.9632, 0.9862]
+  false-positive rate       0.0625 [0.0493, 0.0748]
+  AP                        0.9880 [0.9823, 0.9921]
+  AUROC                     0.9921 [0.9876, 0.9953]
+
+Value: normalized_clean   Column: safeguard__protectai
+  threshold                 2.79693e-05
+  test rows                 2059
+  positive rows             650 (31.57%)
+  negative rows             1409 (68.43%)
+  bootstrap resamples       1000
+  random-scorer AP          0.3157 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.8781 [0.8528, 0.9022]
+  recall                    0.9754 [0.9623, 0.9864]
+  false-positive rate       0.0625 [0.0499, 0.0756]
+  AP                        0.9880 [0.9827, 0.9922]
+  AUROC                     0.9921 [0.9878, 0.9955]
+
+Value: clean   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9191 [0.9034, 0.9358]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0625 [0.0495, 0.0743]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: zero_width   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4151 [0.3964, 0.4363]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.2864 [0.2712, 0.3058]
+  AUROC                     0.2439 [0.2267, 0.2647]
+
+Value: homoglyph   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4178 [0.3988, 0.4371]
+  recall                    0.9990 [0.9969, 1.0000]
+  false-positive rate       0.9879 [0.9823, 0.9931]
+  AP                        0.8468 [0.8242, 0.8657]
+  AUROC                     0.8681 [0.8522, 0.8828]
+
+Value: base64   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.4151 [0.3964, 0.4350]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       1.0000 [1.0000, 1.0000]
+  AP                        0.5371 [0.5066, 0.5716]
+  AUROC                     0.6190 [0.5946, 0.6420]
+
+Value: normalized_zero_width   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9191 [0.9028, 0.9352]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0625 [0.0503, 0.0749]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: normalized_homoglyph   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9191 [0.9005, 0.9345]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0625 [0.0502, 0.0758]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: normalized_base64   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9191 [0.9026, 0.9336]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0625 [0.0509, 0.0749]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: normalized_clean   Column: gandalf_mixed__protectai
+  threshold                 2.79693e-05
+  test rows                 2409
+  positive rows             1000 (41.51%)
+  negative rows             1409 (58.49%)
+  bootstrap resamples       1000
+  random-scorer AP          0.4151 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9191 [0.9027, 0.9357]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0625 [0.0493, 0.0755]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Results table: recall [95% interval] (copy into section 1(d))
+-------------------------------------------------------------
+A one-class cell holds the metric the checker prints for it, named in parentheses.
+
+Column: deepset__tfidf_lr
+  clean                   0.4109 [0.3537, 0.4750]
+  zero_width              0.0000 [0.0000, 0.0000]
+  homoglyph               0.1008 [0.0656, 0.1354]
+  base64                  0.0000 [0.0000, 0.0000]
+  normalized_clean        0.4109 [0.3516, 0.4675]
+  normalized_zero_width   0.4109 [0.3539, 0.4749]
+  normalized_homoglyph    0.4109 [0.3508, 0.4695]
+  normalized_base64       0.4109 [0.3517, 0.4674]
+
+Column: gandalf__tfidf_lr
+  clean                   0.9410 [0.9260, 0.9550]
+  zero_width              0.0000 [0.0000, 0.0000]
+  homoglyph               0.1070 [0.0880, 0.1270]
+  base64                  0.0000 [0.0000, 0.0000]
+  normalized_clean        0.9410 [0.9260, 0.9560]
+  normalized_zero_width   0.9410 [0.9260, 0.9550]
+  normalized_homoglyph    0.9410 [0.9270, 0.9560]
+  normalized_base64       0.9410 [0.9260, 0.9550]
+
+Column: safeguard__tfidf_lr
+  clean                   0.9969 [0.9921, 1.0000]
+  zero_width              0.0000 [0.0000, 0.0000]
+  homoglyph               0.6754 [0.6389, 0.7112]
+  base64                  0.0000 [0.0000, 0.0000]
+  normalized_clean        0.9969 [0.9923, 1.0000]
+  normalized_zero_width   0.9969 [0.9922, 1.0000]
+  normalized_homoglyph    0.9969 [0.9923, 1.0000]
+  normalized_base64       0.9969 [0.9921, 1.0000]
+
+Column: gandalf_mixed__tfidf_lr
+  clean                   0.9410 [0.9268, 0.9549]
+  zero_width              0.0000 [0.0000, 0.0000]
+  homoglyph               0.1070 [0.0895, 0.1260]
+  base64                  0.0000 [0.0000, 0.0000]
+  normalized_clean        0.9410 [0.9262, 0.9546]
+  normalized_zero_width   0.9410 [0.9256, 0.9546]
+  normalized_homoglyph    0.9410 [0.9258, 0.9552]
+  normalized_base64       0.9410 [0.9267, 0.9548]
+
+Column: deepset__distilbert
+  clean                   0.7791 [0.7265, 0.8272]
+  zero_width              0.7791 [0.7302, 0.8279]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.7791 [0.7283, 0.8277]
+  normalized_zero_width   0.7791 [0.7262, 0.8308]
+  normalized_homoglyph    0.7791 [0.7262, 0.8280]
+  normalized_base64       0.7791 [0.7239, 0.8245]
+
+Column: gandalf__distilbert
+  clean                   0.9800 [0.9710, 0.9880]
+  zero_width              0.9800 [0.9710, 0.9880]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.9800 [0.9710, 0.9880]
+  normalized_zero_width   0.9800 [0.9720, 0.9880]
+  normalized_homoglyph    0.9800 [0.9710, 0.9890]
+  normalized_base64       0.9800 [0.9710, 0.9880]
+
+Column: safeguard__distilbert
+  clean                   0.9969 [0.9923, 1.0000]
+  zero_width              0.9969 [0.9921, 1.0000]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.9969 [0.9922, 1.0000]
+  normalized_zero_width   0.9969 [0.9920, 1.0000]
+  normalized_homoglyph    0.9969 [0.9921, 1.0000]
+  normalized_base64       0.9969 [0.9922, 1.0000]
+
+Column: gandalf_mixed__distilbert
+  clean                   0.9800 [0.9704, 0.9883]
+  zero_width              0.9800 [0.9710, 0.9879]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.9800 [0.9707, 0.9885]
+  normalized_zero_width   0.9800 [0.9703, 0.9888]
+  normalized_homoglyph    0.9800 [0.9710, 0.9881]
+  normalized_base64       0.9800 [0.9704, 0.9883]
+
+Column: deepset__protectai
+  clean                   0.7016 [0.6403, 0.7594]
+  zero_width              1.0000 [1.0000, 1.0000]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.7016 [0.6432, 0.7536]
+  normalized_zero_width   0.7016 [0.6470, 0.7578]
+  normalized_homoglyph    0.7016 [0.6461, 0.7576]
+  normalized_base64       0.7016 [0.6455, 0.7579]
+
+Column: gandalf__protectai
+  clean                   1.0000 [1.0000, 1.0000]
+  zero_width              1.0000 [1.0000, 1.0000]
+  homoglyph               0.9990 [0.9970, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        1.0000 [1.0000, 1.0000]
+  normalized_zero_width   1.0000 [1.0000, 1.0000]
+  normalized_homoglyph    1.0000 [1.0000, 1.0000]
+  normalized_base64       1.0000 [1.0000, 1.0000]
+
+Column: safeguard__protectai
+  clean                   0.9754 [0.9625, 0.9869]
+  zero_width              1.0000 [1.0000, 1.0000]
+  homoglyph               1.0000 [1.0000, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        0.9754 [0.9623, 0.9864]
+  normalized_zero_width   0.9754 [0.9630, 0.9862]
+  normalized_homoglyph    0.9754 [0.9622, 0.9859]
+  normalized_base64       0.9754 [0.9632, 0.9862]
+
+Column: gandalf_mixed__protectai
+  clean                   1.0000 [1.0000, 1.0000]
+  zero_width              1.0000 [1.0000, 1.0000]
+  homoglyph               0.9990 [0.9969, 1.0000]
+  base64                  1.0000 [1.0000, 1.0000]
+  normalized_clean        1.0000 [1.0000, 1.0000]
+  normalized_zero_width   1.0000 [1.0000, 1.0000]
+  normalized_homoglyph    1.0000 [1.0000, 1.0000]
+  normalized_base64       1.0000 [1.0000, 1.0000]
+
+Difference from the baseline value 'clean' (copy into section 1(e))
+-------------------------------------------------------------------
+Difference = the value's metric minus the baseline value's metric in the same column.
+Direction of interest: lower. Change = the difference with its sign flipped, so a drop is positive.
+The verdict in section 1(e) compares the change with your yes and no differences.
+
+Column: deepset__tfidf_lr
+  zero_width              difference -0.4109   change +0.4109 (recall)
+  homoglyph               difference -0.3101   change +0.3101 (recall)
+  base64                  difference -0.4109   change +0.4109 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf__tfidf_lr
+  zero_width              difference -0.9410   change +0.9410 (recall)
+  homoglyph               difference -0.8340   change +0.8340 (recall)
+  base64                  difference -0.9410   change +0.9410 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: safeguard__tfidf_lr
+  zero_width              difference -0.9969   change +0.9969 (recall)
+  homoglyph               difference -0.3215   change +0.3215 (recall)
+  base64                  difference -0.9969   change +0.9969 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf_mixed__tfidf_lr
+  zero_width              difference -0.9410   change +0.9410 (recall)
+  homoglyph               difference -0.8340   change +0.8340 (recall)
+  base64                  difference -0.9410   change +0.9410 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: deepset__distilbert
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference +0.2209   change -0.2209 (recall)
+  base64                  difference +0.2209   change -0.2209 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf__distilbert
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference +0.0200   change -0.0200 (recall)
+  base64                  difference +0.0200   change -0.0200 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: safeguard__distilbert
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference +0.0031   change -0.0031 (recall)
+  base64                  difference +0.0031   change -0.0031 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf_mixed__distilbert
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference +0.0200   change -0.0200 (recall)
+  base64                  difference +0.0200   change -0.0200 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: deepset__protectai
+  zero_width              difference +0.2984   change -0.2984 (recall)
+  homoglyph               difference +0.2984   change -0.2984 (recall)
+  base64                  difference +0.2984   change -0.2984 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf__protectai
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference -0.0010   change +0.0010 (recall)
+  base64                  difference +0.0000   change +0.0000 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: safeguard__protectai
+  zero_width              difference +0.0246   change -0.0246 (recall)
+  homoglyph               difference +0.0246   change -0.0246 (recall)
+  base64                  difference +0.0246   change -0.0246 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Column: gandalf_mixed__protectai
+  zero_width              difference +0.0000   change +0.0000 (recall)
+  homoglyph               difference -0.0010   change +0.0010 (recall)
+  base64                  difference +0.0000   change +0.0000 (recall)
+  normalized_clean        difference +0.0000   change +0.0000 (recall)
+  normalized_zero_width   difference +0.0000   change +0.0000 (recall)
+  normalized_homoglyph    difference +0.0000   change +0.0000 (recall)
+  normalized_base64       difference +0.0000   change +0.0000 (recall)
+
+Warnings
+--------
+- value zero_width, column deepset__tfidf_lr: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value zero_width, column deepset__tfidf_lr: the score column has only 1 distinct values. Write the classifier's score or probability, not its predicted label.
+- value base64, column deepset__tfidf_lr: AUROC 0.4981 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value base64, column deepset__tfidf_lr: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column deepset__tfidf_lr: the score column has only 2 distinct values. Write the classifier's score or probability, not its predicted label.
+- value clean, column safeguard__tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column safeguard__tfidf_lr: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column safeguard__tfidf_lr: the score column has only 1 distinct values. Write the classifier's score or probability, not its predicted label.
+- value normalized_clean, column safeguard__tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column safeguard__tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column safeguard__tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column safeguard__tfidf_lr: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column gandalf_mixed__tfidf_lr: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column gandalf_mixed__tfidf_lr: the score column has only 1 distinct values. Write the classifier's score or probability, not its predicted label.
+- value homoglyph, column deepset__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column deepset__distilbert: AUROC 0.3783 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value base64, column deepset__distilbert: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column deepset__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column gandalf__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column gandalf__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value clean, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column safeguard__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column safeguard__distilbert: AUROC 0.3911 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value base64, column safeguard__distilbert: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column safeguard__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_clean, column safeguard__distilbert: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value clean, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column gandalf_mixed__distilbert: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value homoglyph, column gandalf_mixed__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column gandalf_mixed__distilbert: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_clean, column gandalf_mixed__distilbert: AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column deepset__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column deepset__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column deepset__protectai: AUROC 0.3045 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value base64, column deepset__protectai: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column deepset__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value clean, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_clean, column gandalf__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value clean, column safeguard__protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column safeguard__protectai: AUROC 0.4276 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value zero_width, column safeguard__protectai: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value zero_width, column safeguard__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column safeguard__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column safeguard__protectai: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value base64, column safeguard__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column safeguard__protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column safeguard__protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column safeguard__protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_clean, column safeguard__protectai: AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value clean, column gandalf_mixed__protectai: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value zero_width, column gandalf_mixed__protectai: AUROC 0.2439 is below 0.5. The labels or the score direction may be inverted; check both before submitting.
+- value zero_width, column gandalf_mixed__protectai: no better than a random scorer on AP or AUROC. Name this cell and give one reason below your results table in section 1(d).
+- value zero_width, column gandalf_mixed__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value homoglyph, column gandalf_mixed__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value base64, column gandalf_mixed__protectai: recall at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_zero_width, column gandalf_mixed__protectai: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_homoglyph, column gandalf_mixed__protectai: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_base64, column gandalf_mixed__protectai: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value normalized_clean, column gandalf_mixed__protectai: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).

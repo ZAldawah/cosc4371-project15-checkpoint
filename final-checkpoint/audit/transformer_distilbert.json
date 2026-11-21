@@ -1,0 +1,366 @@
+{
+  "model": "distilbert",
+  "model_id": "distilbert/distilbert-base-uncased",
+  "revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "source_url": "https://huggingface.co/distilbert/distilbert-base-uncased/tree/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cu126",
+      "transformers": "4.57.1",
+      "huggingface-hub": "0.36.0",
+      "tokenizers": "0.22.2",
+      "safetensors": "0.8.0",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "sentencepiece": "0.2.1",
+      "protobuf": "6.33.0",
+      "scikit-learn": "1.7.2",
+      "pyarrow": "22.0.0"
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 3060 Ti",
+    "cuda_runtime": "12.6",
+    "cpu_threads": 8,
+    "deterministic_algorithms": "warn_only=True; seeded; cuDNN benchmark and TF32 disabled",
+    "precision": "CUDA float16 autocast; logits converted to float32 before softmax"
+  },
+  "seed": 4371,
+  "split_sha256": "8ed86617fe1a5be0fa6784f8c443bfaa3e4d327d313ca8b1dc0e8e5e1800f162",
+  "same_training_set": true,
+  "training_exposure_note": "Same project Safe-Guard training set",
+  "max_length": 512,
+  "prediction_cache": "Exact text only, label blind, reused across views",
+  "status": "complete",
+  "download_and_load_seconds": 5.010198100004345,
+  "training_tokenize_seconds": 1.149113599996781,
+  "training": {
+    "seed": 4371,
+    "rows": 6400,
+    "epochs": 3,
+    "batch_size": 8,
+    "gradient_accumulation": 2,
+    "effective_batch_size": 16,
+    "max_length": 512,
+    "optimizer": "torch.optim.AdamW",
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "scheduler": "linear decay with 10% warmup",
+    "warmup_steps": 120,
+    "optimizer_steps": 1200,
+    "gradient_norm_limit": 1.0,
+    "selection_rule": "fixed final epoch; no test tuning or best-test checkpoint selection"
+  },
+  "pilot": {
+    "measured_microbatches": 20,
+    "rows": 160,
+    "seconds": 7.702559199999087,
+    "rows_per_second": 20.772316816470425,
+    "projected_full_training_seconds": 924.3071039998904,
+    "scope": "First 20 training microbatches, including warmup, optimizer updates and loss transfer; continued same run without restart"
+  },
+  "training_seconds": 662.8042552999977,
+  "epoch_log": [
+    {
+      "epoch": 1,
+      "mean_train_loss": 0.1516476321965456,
+      "seconds": 266.4397371999803
+    },
+    {
+      "epoch": 2,
+      "mean_train_loss": 0.012452118042856454,
+      "seconds": 176.28967500000726
+    },
+    {
+      "epoch": 3,
+      "mean_train_loss": 0.003125698622316122,
+      "seconds": 220.0747587000078
+    }
+  ],
+  "optimizer_steps_completed": 1200,
+  "model_label_mapping": {
+    "0": "SAFE",
+    "1": "INJECTION"
+  },
+  "validation_scoring": {
+    "seconds": 2.5530405000026803,
+    "rows": 1591,
+    "new_unique_texts": 1582,
+    "cache_hits": 9,
+    "truncated_rows": 42,
+    "maximum_untruncated_tokens": 4811
+  },
+  "threshold": 0.0005213362746872008,
+  "threshold_repr": "0.0005213362746872008",
+  "threshold_rule": "lowest unique validation probability (plus nextafter maximum) with FPR <=0.05; predictions score>=threshold; frozen across test datasets and views",
+  "validation": {
+    "rows": 1591,
+    "negative_rows": 1117,
+    "positive_rows": 474,
+    "false_positives": 55,
+    "fpr": 0.049239033124440466,
+    "recall": 0.9978902953586498
+  },
+  "views": {
+    "clean": {
+      "seconds": 4.8854678999923635,
+      "rows": 3715,
+      "new_unique_texts": 3704,
+      "cache_hits": 11,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.05819730305180979
+        }
+      }
+    },
+    "zero_width": {
+      "seconds": 5.346570299996529,
+      "rows": 3715,
+      "new_unique_texts": 3702,
+      "cache_hits": 13,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.05819730305180979
+        }
+      }
+    },
+    "homoglyph": {
+      "seconds": 7.510772000008728,
+      "rows": 3715,
+      "new_unique_texts": 3703,
+      "cache_hits": 12,
+      "truncated_rows": 216,
+      "maximum_untruncated_tokens": 5700,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 3,
+          "recall": 1.0,
+          "fpr": 0.9974874371859297
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 1.0,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 213,
+          "recall": 1.0,
+          "fpr": 1.0
+        }
+      }
+    },
+    "base64": {
+      "seconds": 5.1916740000015125,
+      "rows": 3715,
+      "new_unique_texts": 3704,
+      "cache_hits": 11,
+      "truncated_rows": 1,
+      "maximum_untruncated_tokens": 790,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 1.0,
+          "fpr": 1.0
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 1.0,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 0,
+          "recall": 1.0,
+          "fpr": 1.0
+        }
+      }
+    },
+    "normalized_zero_width": {
+      "seconds": 0.027258899994194508,
+      "rows": 3715,
+      "new_unique_texts": 13,
+      "cache_hits": 3702,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.058907026259758695
+        }
+      }
+    },
+    "normalized_homoglyph": {
+      "seconds": 0.0007536999764852226,
+      "rows": 3715,
+      "new_unique_texts": 0,
+      "cache_hits": 3715,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.058907026259758695
+        }
+      }
+    },
+    "normalized_base64": {
+      "seconds": 0.0005660000024363399,
+      "rows": 3715,
+      "new_unique_texts": 0,
+      "cache_hits": 3715,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.058907026259758695
+        }
+      }
+    },
+    "normalized_clean": {
+      "seconds": 0.000594000011915341,
+      "rows": 3715,
+      "new_unique_texts": 0,
+      "cache_hits": 3715,
+      "truncated_rows": 68,
+      "maximum_untruncated_tokens": 1925,
+      "datasets": {
+        "deepset": {
+          "rows": 656,
+          "positive_rows": 258,
+          "truncated_rows": 1,
+          "recall": 0.7790697674418605,
+          "fpr": 0.5778894472361809
+        },
+        "gandalf": {
+          "rows": 1000,
+          "positive_rows": 1000,
+          "truncated_rows": 0,
+          "recall": 0.98,
+          "fpr": null
+        },
+        "safeguard": {
+          "rows": 2059,
+          "positive_rows": 650,
+          "truncated_rows": 67,
+          "recall": 0.9969230769230769,
+          "fpr": 0.058907026259758695
+        }
+      }
+    }
+  },
+  "test_scoring_seconds": 22.963656799984165,
+  "total_unique_prediction_inputs": 16408,
+  "normalization_source_sha256": "4291a82ca4a99adeeb7550ad88e3e17a3ed5dfbe34a340ebcf20c22b8ee4b14d",
+  "timing_interpretation": "Wall-clock scoring time includes tokenization and exact-text cache hits; restored views can reuse prior inputs and are not independent full model-inference runs",
+  "checkpoint_sha256": "3173058b4f596f0a8b72206928f800bc3e330efe949bbf7c5fa88cb9b58d7489",
+  "compatibility_verification": "Frozen normalization source hash verified after completion; later script additions only enforce cache/normalization metadata guards, without numerical training or inference changes"
+}

@@ -1,0 +1,16 @@
+{
+  "main_variable": "test dataset",
+  "values": ["safeguard", "deepset", "gandalf"],
+  "columns": ["tfidf_lr", "distilbert", "protectai"],
+  "primary_metric": "recall",
+  "reference": "safeguard",
+  "direction": "lower",
+  "change": "Safe-Guard recall minus external dataset recall, within each classifier",
+  "yes_difference": 0.08,
+  "no_difference": 0.0799,
+  "boundary_reason": "Midsemester used yes >=0.08 and no <0.08. To express the final handout's closed no inequality, no <=0.0799 introduces an explicit 0.0001 undecided gap below the unchanged yes cutoff. This clarification was fixed before new transformer results and is not a statistical significance test.",
+  "normalization_selection": "One fixed blind normalizer accepted on Safe-Guard validation with TF-IDF, then used unchanged for all classifiers. Require mean recall across three obfuscations to improve and normalized-view FPR not to exceed clean validation FPR by more than 0.01.",
+  "error_sample": {"value": "deepset", "column": "tfidf_lr", "seed": 4371, "fp": 10, "fn": 10},
+  "gandalf_mixed_control": "All 1000 presumed Gandalf positives plus all 1409 retained held-out Safe-Guard benign rows. Supplemental only. Not verified style matching; no original Gandalf negatives exist.",
+  "zero_shot": "Separate Week 10 L1 class-description embedding comparison. Qwen3-Embedding-0.6B instead of lecture 8B due local GPU capacity; fixed descriptions and cosine margin threshold0, no labeled calibration. Not part of trained-model primary table."
+}

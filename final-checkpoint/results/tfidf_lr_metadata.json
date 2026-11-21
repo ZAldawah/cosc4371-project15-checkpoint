@@ -1,0 +1,78 @@
+{
+  "seed": 4371,
+  "fit_seconds": 1.0021868999756407,
+  "score_seconds_by_view": {
+    "clean": 0.22200490001705475,
+    "zero_width": 0.19786290000774898,
+    "homoglyph": 0.2708818999817595,
+    "base64": 0.07756820000940934,
+    "normalized_clean": 0.31632419998641126,
+    "normalized_zero_width": 0.4559398000128567,
+    "normalized_homoglyph": 0.4673668000032194,
+    "normalized_base64": 0.4781467999855522
+  },
+  "threshold": 0.14544270512937266,
+  "threshold_repr": "0.14544270512937266",
+  "threshold_rule": "lowest unique clean-validation probability with FPR <= 0.05; positive iff score >= threshold",
+  "training_rows": 6400,
+  "validation_rows": 1591,
+  "test_rows": 3715,
+  "vocabulary_size": 49857,
+  "leakage_checks": {
+    "train_rows_exact_match_deepset_test": 0,
+    "train_groups_overlap_deepset_test": 0,
+    "validation_groups_overlap_deepset_test": 0,
+    "train_rows_exact_match_gandalf_test": 0,
+    "train_groups_overlap_gandalf_test": 0,
+    "validation_groups_overlap_gandalf_test": 0,
+    "train_rows_exact_match_safeguard_test": 0,
+    "train_groups_overlap_safeguard_test": 0,
+    "validation_groups_overlap_safeguard_test": 0,
+    "train_rows_exact_match_validation": 0,
+    "train_groups_overlap_validation": 0
+  },
+  "validation": {
+    "clean": {
+      "recall": 0.9978902953586498,
+      "fpr": 0.049239033124440466,
+      "texts_changed_from_original": 0
+    },
+    "zero_width": {
+      "recall": 0.0,
+      "fpr": 0.0,
+      "texts_changed_from_original": 1590
+    },
+    "homoglyph": {
+      "recall": 0.689873417721519,
+      "fpr": 0.08863025962399283,
+      "texts_changed_from_original": 1590
+    },
+    "base64": {
+      "recall": 0.0,
+      "fpr": 0.0,
+      "texts_changed_from_original": 1591
+    },
+    "normalized_clean": {
+      "recall": 0.9978902953586498,
+      "fpr": 0.049239033124440466,
+      "texts_changed_from_original": 16
+    },
+    "normalized_zero_width": {
+      "recall": 0.9978902953586498,
+      "fpr": 0.049239033124440466,
+      "texts_changed_from_original": 16
+    },
+    "normalized_homoglyph": {
+      "recall": 0.9978902953586498,
+      "fpr": 0.049239033124440466,
+      "texts_changed_from_original": 16
+    },
+    "normalized_base64": {
+      "recall": 0.9978902953586498,
+      "fpr": 0.049239033124440466,
+      "texts_changed_from_original": 16
+    }
+  },
+  "same_training_set_as_midsemester": true,
+  "primary_test_scores_clean_only": true
+}

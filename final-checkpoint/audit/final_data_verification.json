@@ -1,0 +1,270 @@
+{
+  "split_matches_midsemester": true,
+  "retained_rows": 11706,
+  "raw_rows": 11958,
+  "split_sha256": "8ed86617fe1a5be0fa6784f8c443bfaa3e4d327d313ca8b1dc0e8e5e1800f162",
+  "input_hashes_verified": true,
+  "full_near_duplicate_recomputed": true,
+  "near_duplicate_audit": {
+    "rule": "NFKC, casefold, whitespace collapse; distinct character 5-gram sets; Jaccard >= 0.85; strings shorter than 5 use their whole string as one token",
+    "scope": "all 11958 input rows, every dataset; no subsampling",
+    "method": "lossless globally-frequency-ordered prefix filtering plus length filtering and exact integer set-intersection verification",
+    "threshold": 0.85,
+    "candidate_pairs_verified": 85006,
+    "distinct_raw_texts": 11793,
+    "near_unique_text_pairs": 570,
+    "near_row_pairs_excluding_identical_raw_text": 982,
+    "primary_near_row_pairs_excluding_identical_raw_text": 962,
+    "primary_distinct_raw_texts_in_near_pairs": 493,
+    "primary_rows_in_near_pairs": 561,
+    "all_exact_or_near_components": 11468,
+    "all_non_singleton_components": 269,
+    "primary_exact_or_near_non_singleton_components": 252,
+    "primary_exact_or_near_component_excess": 469,
+    "elapsed_seconds": 5.597439399978612,
+    "transitivity": "Connected components include chains whose endpoints need not directly meet the threshold."
+  },
+  "cleanup": {
+    "input_rows": 11958,
+    "kept_rows": 11706,
+    "removed_rows": 252,
+    "moved_test_rows_into_development": 0,
+    "conflicting_exact_text_keys": 7,
+    "cross_dataset_exact_text_keys": 6,
+    "removal_flag_counts_overlapping": {
+      "cross_dataset_exact_overlap": 12,
+      "development_group_touches_test": 240,
+      "exact_label_conflict": 15
+    },
+    "exclusive_primary_removal_counts": {
+      "development_group_touches_test": 235,
+      "exact_label_conflict": 15,
+      "cross_dataset_exact_overlap": 2
+    },
+    "removed_by_dataset_source_split": [
+      {
+        "dataset": "deepset",
+        "source_split": "test",
+        "rows": 2
+      },
+      {
+        "dataset": "deepset",
+        "source_split": "train",
+        "rows": 4
+      },
+      {
+        "dataset": "safeguard",
+        "source_split": "test",
+        "rows": 1
+      },
+      {
+        "dataset": "safeguard",
+        "source_split": "train",
+        "rows": 245
+      }
+    ],
+    "protected_boundaries_overlapping": [
+      {
+        "protected_test_dataset": "deepset",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 1,
+        "direct_exact_development_rows": 1,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "deepset",
+        "protected_source_split": "train",
+        "development_rows_in_touching_components": 9,
+        "direct_exact_development_rows": 4,
+        "near_or_transitive_only_development_rows": 5
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "train",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "gandalf",
+        "protected_source_split": "validation",
+        "development_rows_in_touching_components": 0,
+        "direct_exact_development_rows": 0,
+        "near_or_transitive_only_development_rows": 0
+      },
+      {
+        "protected_test_dataset": "safeguard",
+        "protected_source_split": "test",
+        "development_rows_in_touching_components": 232,
+        "direct_exact_development_rows": 79,
+        "near_or_transitive_only_development_rows": 153
+      }
+    ],
+    "rule": "quarantine missing/invalid rows, exact supplied-label conflicts, and every cross-dataset exact-overlap row; remove SafeGuard development rows in any full-input exact/near component touching released SafeGuard test or any external row; keep publisher SafeGuard test in test; pool all external source splits by dataset",
+    "split_rule": "first fold of StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=4371) on retained SafeGuard released train; exact/near connected component is the group",
+    "retained_development_rows": 7991,
+    "train_rows": 6400,
+    "validation_rows": 1591,
+    "validation_fraction_of_retained_development": 0.19909898635965462,
+    "groups": {
+      "test": 3654,
+      "train": 6246,
+      "validation": 1561
+    },
+    "leakage_checks": {
+      "train_rows_exact_match_deepset_test": 0,
+      "train_groups_overlap_deepset_test": 0,
+      "validation_groups_overlap_deepset_test": 0,
+      "train_rows_exact_match_gandalf_test": 0,
+      "train_groups_overlap_gandalf_test": 0,
+      "validation_groups_overlap_gandalf_test": 0,
+      "train_rows_exact_match_safeguard_test": 0,
+      "train_groups_overlap_safeguard_test": 0,
+      "validation_groups_overlap_safeguard_test": 0,
+      "train_rows_exact_match_validation": 0,
+      "train_groups_overlap_validation": 0
+    },
+    "same_partition_repetitions": "Within-partition exact/near repeats are retained; checker intervals resample rows and do not model template-group dependence.",
+    "related_entity_limit": "Entity IDs are unavailable; only measured exact/near text families can be grouped."
+  },
+  "leakage_checks": {
+    "train_rows_exact_match_deepset_test": 0,
+    "train_groups_overlap_deepset_test": 0,
+    "validation_groups_overlap_deepset_test": 0,
+    "train_rows_exact_match_gandalf_test": 0,
+    "train_groups_overlap_gandalf_test": 0,
+    "validation_groups_overlap_gandalf_test": 0,
+    "train_rows_exact_match_safeguard_test": 0,
+    "train_groups_overlap_safeguard_test": 0,
+    "validation_groups_overlap_safeguard_test": 0,
+    "train_rows_exact_match_validation": 0,
+    "train_groups_overlap_validation": 0
+  },
+  "transform_controls": {
+    "deepset": {
+      "rows": 656,
+      "clean_texts_changed_by_normalization": 4,
+      "benign_clean_texts_changed_by_normalization": 2,
+      "views": {
+        "clean": {
+          "changed_from_clean": 0,
+          "equal_normalized_clean": 652
+        },
+        "zero_width": {
+          "changed_from_clean": 655,
+          "equal_normalized_clean": 1
+        },
+        "homoglyph": {
+          "changed_from_clean": 656,
+          "equal_normalized_clean": 0
+        },
+        "base64": {
+          "changed_from_clean": 656,
+          "equal_normalized_clean": 0
+        },
+        "normalized_clean": {
+          "changed_from_clean": 4,
+          "equal_normalized_clean": 656
+        },
+        "normalized_zero_width": {
+          "changed_from_clean": 4,
+          "equal_normalized_clean": 656
+        },
+        "normalized_homoglyph": {
+          "changed_from_clean": 4,
+          "equal_normalized_clean": 656
+        },
+        "normalized_base64": {
+          "changed_from_clean": 4,
+          "equal_normalized_clean": 656
+        }
+      }
+    },
+    "gandalf": {
+      "rows": 1000,
+      "clean_texts_changed_by_normalization": 2,
+      "benign_clean_texts_changed_by_normalization": 0,
+      "views": {
+        "clean": {
+          "changed_from_clean": 0,
+          "equal_normalized_clean": 998
+        },
+        "zero_width": {
+          "changed_from_clean": 999,
+          "equal_normalized_clean": 0
+        },
+        "homoglyph": {
+          "changed_from_clean": 999,
+          "equal_normalized_clean": 0
+        },
+        "base64": {
+          "changed_from_clean": 1000,
+          "equal_normalized_clean": 0
+        },
+        "normalized_clean": {
+          "changed_from_clean": 2,
+          "equal_normalized_clean": 1000
+        },
+        "normalized_zero_width": {
+          "changed_from_clean": 2,
+          "equal_normalized_clean": 1000
+        },
+        "normalized_homoglyph": {
+          "changed_from_clean": 2,
+          "equal_normalized_clean": 1000
+        },
+        "normalized_base64": {
+          "changed_from_clean": 2,
+          "equal_normalized_clean": 1000
+        }
+      }
+    },
+    "safeguard": {
+      "rows": 2059,
+      "clean_texts_changed_by_normalization": 7,
+      "benign_clean_texts_changed_by_normalization": 5,
+      "views": {
+        "clean": {
+          "changed_from_clean": 0,
+          "equal_normalized_clean": 2052
+        },
+        "zero_width": {
+          "changed_from_clean": 2059,
+          "equal_normalized_clean": 0
+        },
+        "homoglyph": {
+          "changed_from_clean": 2059,
+          "equal_normalized_clean": 0
+        },
+        "base64": {
+          "changed_from_clean": 2059,
+          "equal_normalized_clean": 0
+        },
+        "normalized_clean": {
+          "changed_from_clean": 7,
+          "equal_normalized_clean": 2059
+        },
+        "normalized_zero_width": {
+          "changed_from_clean": 7,
+          "equal_normalized_clean": 2059
+        },
+        "normalized_homoglyph": {
+          "changed_from_clean": 7,
+          "equal_normalized_clean": 2059
+        },
+        "normalized_base64": {
+          "changed_from_clean": 7,
+          "equal_normalized_clean": 2059
+        }
+      }
+    }
+  },
+  "common_source_sha256": "4291a82ca4a99adeeb7550ad88e3e17a3ed5dfbe34a340ebcf20c22b8ee4b14d"
+}
