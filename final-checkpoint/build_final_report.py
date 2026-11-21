@@ -1,5 +1,6 @@
 """Build the final report directly from checker-derived results."""
 from pathlib import Path
+import csv
 import html
 import json
 import textwrap
@@ -23,7 +24,64 @@ def read(path): return json.loads((HERE/path).read_text(encoding='utf-8'))
 def f(value): return 'n/a' if value is None else f'{value:.4f}'
 def pct(value): return f'{100*value:.2f}%'
 
+def false_alarm_note(cells):
+    parts=[f"{NAMES[m]} {pct(cells[('deepset',m)]['metrics']['false-positive rate']['value'])} "
+           f"({cells[('deepset',m)]['fp']}/{cells[('deepset',m)]['negative']})" for m in MODELS]
+    lr=cells[('deepset','tfidf_lr')]['metrics']
+    db=cells[('deepset','distilbert')]['metrics']
+    comparison='Recall and false alarms must both be considered when comparing practical detection.'
+    if db['recall']['value']>lr['recall']['value'] and db['false-positive rate']['value']>lr['false-positive rate']['value']:
+        comparison="DistilBERT's higher recall than LR comes with a higher false-positive rate; recall alone does not establish better practical detection."
+    return '<b>False alarms on deepset:</b> '+', '.join(parts)+'. '+comparison
+
+def loss_finding(row):
+    decision={'yes':'meets the prespecified material-loss rule',
+              'no':'meets the prespecified no-material-loss rule',
+              'undecided':'falls in the prespecified undecided gap'}[row['verdict']]
+    return (f"The Safe-Guard-to-deepset recall loss is {row['change']:.4f} "
+            f"({100*row['change']:.2f} percentage points), which {decision}.")
+
+def claim_text(rows):
+    external=[r for r in rows if r['value']!='safeguard']
+    yes=[f"{NAMES[r['value']]} / {NAMES[r['column']]} (D={r['change']:.4f})" for r in external if r['verdict']=='yes']
+    undecided=sum(r['verdict']=='undecided' for r in external)
+    if external and undecided==len(external):
+        return 'Inconclusive under the prespecified decision rule.'
+    if yes:
+        text='Material recall loss relative to the same-column Safe-Guard reference is supported for '+', '.join(yes)+'.'
+    elif undecided:
+        text='No external cell supports material recall loss under the prespecified decision rule.'
+    else:
+        text='All measured external cells meet the prespecified no-material-loss rule.'
+    if undecided:
+        text+=f' {undecided} external cell(s) remain inconclusive under that rule.'
+    return text
+
+def obfuscation_interpretation(cells):
+    views=['zero_width','homoglyph','base64']
+    attacked=[cells[(v,'deepset__'+m)] for m in ['distilbert','protectai'] for v in views]
+    high=[r for r in attacked if r['metrics']['false-positive rate']['value']>=.95]
+    if high:
+        rates=[r['metrics']['false-positive rate']['value'] for r in high]
+        recalls=[r['metrics']['recall']['value'] for r in high]
+        text=(f"{len(high)} of {len(attacked)} transformer obfuscation cells flag at least 95% of benign prompts "
+              f"(FPR {min(rates):.4f}-{max(rates):.4f}; recall {min(recalls):.4f}-{max(recalls):.4f}). ")
+    else:
+        text='No transformer obfuscation cell has FPR at least 95%. '
+    text+='Recall increases must be interpreted alongside false alarms. '
+    counts=lambda r: tuple(r[k] for k in ['tp','fp','tn','fn'])
+    restored=sum(counts(cells[('normalized_'+v,'deepset__'+m)])==counts(cells[('clean','deepset__'+m)])
+                 for m in MODELS for v in views)
+    text+=f'On deepset, {restored} of {len(MODELS)*len(views)} normalized cells match their clean recall and FPR. '
+    before=cells[('clean','safeguard__distilbert')]
+    after=cells[('normalized_clean','safeguard__distilbert')]
+    direction='increases' if after['fp']>before['fp'] else 'decreases' if after['fp']<before['fp'] else 'leaves unchanged'
+    text+=(f"On Safe-Guard, DistilBERT's normalized-clean control {direction} false alarms "
+           f"({before['fp']:,} to {after['fp']:,} out of {before['negative']:,} benign rows).")
+    return '<b>Reading the signs.</b> '+text
+
 def main():
+    (HERE/'figures').mkdir(parents=True,exist_ok=True)
     main_rows=read('results/main_metrics.json'); extra=read('results/obfuscation_metrics.json')
     zero=read('results/zeroshot_metrics.json'); errors=read('results/error_summary.json')
     rules=read('audit/error_category_rules.json')['rules_in_priority_order']
@@ -33,6 +91,9 @@ def main():
     assert len(main_rows)==9 and db['status']==pa['status']=='complete'
     cells={(r['value'],r['column']):r for r in main_rows}
     supplemental={(r['value'],r['column']):r for r in extra}
+    with (HERE/'results'/'tfidf_lr_validation.csv').open(encoding='utf-8',newline='') as stream:
+        lr_benign=[r for r in csv.DictReader(stream) if r['view']=='clean' and int(r['label'])==0]
+    lr_validation_fp=sum(float(r['score'])>=lr['threshold'] for r in lr_benign)
     styles={
         'title':ParagraphStyle('title',fontName='Times-Bold',fontSize=16,leading=18,spaceAfter=9,textColor=colors.black),
         'h':ParagraphStyle('h',fontName='Times-Bold',fontSize=12,leading=14,spaceBefore=8,spaceAfter=5,textColor=colors.black),
@@ -80,7 +141,7 @@ def main():
     p('No primary test rows were subsampled. Seed 4371 controls the group split, model training and error sample. Changes since the midsemester are the completed transformer runs, measured timing pilot, blind normalization controls, a supplementary Gandalf-plus-benign pool, and a Week 10 zero-shot comparison. They address the instructor feedback without replacing the dataset-transfer question.','small')
     p('<b>(b) Thresholds.</b> Each classifier uses the lowest unique clean Safe-Guard validation score (plus a candidate above the maximum) with validation FPR at most 5%. Positive means score at or above the threshold. The same threshold is used for every test dataset, obfuscation and defense. The 5% target is not an external-test guarantee.','small')
     table([['Classifier','Exact threshold','Validation FP / benign'],
-           [NAMES['tfidf_lr'],lr['threshold_repr'],'55 / 1,117'],
+           [NAMES['tfidf_lr'],lr['threshold_repr'],f"{lr_validation_fp} / {len(lr_benign):,}"],
            [NAMES['distilbert'],db['threshold_repr'],f"{db['validation']['false_positives']} / 1,117"],
            [NAMES['protectai'],pa['threshold_repr'],f"{pa['validation']['false_positives']} / 1,117"]],[130,250,140])
     p('<b>(c) Leakage.</b> LR and DistilBERT use the <b>same training set</b>. A fresh full character-5-gram Jaccard audit (NFKC/casefold/whitespace normalization, similarity at least 0.85) reproduced the midsemester split. Exact training-text matches against validation and each test set: <b>0</b>; training/validation exact-or-near family overlaps and development/test family overlaps: <b>0</b>. These are measured text checks, not a guarantee against all shared templates or pretraining exposure.','small')
@@ -91,7 +152,7 @@ def main():
     p('<b>(d) Results.</b> Recall and 95% row-bootstrap intervals below come from the unchanged final checker (1,000 resamples per cell). All nine primary cells are complete.','small')
     table([['Test-dataset value']+[NAMES[m] for m in MODELS]]+
           [[NAMES[v]]+[metric_cell(cells[(v,m)]) for m in MODELS] for v in ['safeguard','deepset','gandalf']],[130,130,130,130])
-    p('<b>False alarms on deepset:</b> '+', '.join(f"{NAMES[m]} {pct(cells[('deepset',m)]['metrics']['false-positive rate']['value'])} ({cells[('deepset',m)]['fp']}/398)" for m in MODELS)+'. DistilBERT\'s higher recall than LR comes with substantially more false alarms; recall alone does not establish better practical detection.','small')
+    p(false_alarm_note(cells),'small')
     random_cells=[f"{NAMES[r['value']]} / {NAMES[r['column']]}" for r in main_rows if r['negative'] and (r['metrics']['AP']['value']<=r['positive']/r['rows'] or r['metrics']['AUROC']['value']<=.5)]
     p('Cells with AP at or below positive prevalence or AUROC at or below 0.5: '+(', '.join(random_cells)+'. Dataset/label-domain mismatch may reverse score ordering.' if random_cells else '<b>none</b> among the two-class primary cells.')+' Gandalf has only presumed positives; only detection rate (checker recall) is interpretable.','small')
     p('<b>(e) Verdict.</b> Direction: <b>lower recall</b>. Change D = Safe-Guard recall minus external-dataset recall within the same column. The midsemester yes cutoff remains D at least 0.08. Its strict no rule (D &lt; 0.08) is expressed as no at most 0.0799, with an explicit 0.0001 undecided gap to follow the final handout\'s closed inequalities. This boundary clarification was fixed before the new transformer results; decisions use unrounded values. These are practical-importance rules, not significance or equivalence tests.','small')
@@ -101,15 +162,11 @@ def main():
     story.append(Image(str(HERE/'figures'/'main_recall_intervals.png'),width=500,height=165.44))
     p('Figure 1. TF-IDF + LR column: Safe-Guard reference, 2,059 test rows, 31.57% positive; deepset, 656 rows, 39.33% positive; Gandalf, 1,000 rows, 100% presumed positive. Points show recall and bars show the checker\'s 95% intervals. All retained original test rows are included.','small')
     r=cells[('deepset','tfidf_lr')]
-    p(f"The Safe-Guard-to-deepset recall loss is {r['change']:.4f} ({100*r['change']:.2f} percentage points), exceeding the prespecified 8-point material-loss cutoff.",'small')
+    p(loss_finding(r),'small')
 
     story.append(PageBreak())
     h('3. Claim and limitation')
-    yes=[f"{NAMES[r['value']]} / {NAMES[r['column']]} (D={r['change']:.4f})" for r in main_rows if r['verdict']=='yes']
-    no=[f"{NAMES[r['value']]} / {NAMES[r['column']]}" for r in main_rows if r['verdict']=='no']
-    claim='Material recall loss relative to the same-column Safe-Guard reference is supported for '+', '.join(yes)+'.' if yes else 'The measured external cells show no material recall loss under the prespecified decision rule.'
-    if all(r['verdict']=='undecided' for r in main_rows if r['value']!='safeguard'): claim='Inconclusive under the prespecified decision rule.'
-    p('<b>(a) Claim.</b> '+claim)
+    p('<b>(a) Claim.</b> '+claim_text(main_rows))
     p('<b>(b) Limitation and settling check.</b> Source differences combine language, prompt style and uncertain task labels: Gandalf positives are presumed, and deepset includes multilingual and context-dependent prompts. These factors could change the apparent transfer loss. A check that would settle whether the claim persists is an independently labeled, application-context-preserving sample from each source, stratified to matched language and prompt-length ranges, with thresholds frozen and uncertainty resampled by text family. The current row intervals may be optimistic for repeated templates.')
     p('The 150-row qualitative review (30 per available source/class, seed 4371) found 104 descriptions consistent with their source labels, 16 context-ambiguous cases, and 30 Gandalf cases that remain presumed-only. It exposed structured Safe-Guard benign templates, explicit override language, and multilingual deepset prompts. These are nonblind descriptive judgments, not estimates of population label accuracy; no source label or model setting changed. See audit/label_review.csv.','small')
     h('4. Error analysis')
@@ -122,7 +179,7 @@ def main():
     story.append(PageBreak())
     h('5. Reproducibility')
     p(f'<b>(a) Files and command.</b> Repository: <link href="{REPO}">{REPO}</link>. The final package includes split.csv, scores.csv and errors.csv; pinned input/model manifests; all scripts; validation probabilities; audit evidence; raw per-model probabilities; and figures. The orchestration command below writes the scored rows and rebuilds this report. Public artifacts contain IDs, labels, hashes and scores; raw datasets and pretrained weights are downloaded separately, and fine-tuned weights are generated locally.')
-    p('<font face="Courier">python run_final.py</font><br/>Uses the data/ cache, downloading pinned Parquet files when absent. Install requirements.txt in Python 3.12 first; the README gives CUDA and CPU setup. To reproduce only the final checker:','small')
+    p('<font face="Courier">python run_final.py</font><br/>Uses the data/ cache, downloading pinned Parquet files when absent. Install requirements.txt in Python 3.12 first; the README gives CUDA and CPU setup. To reproduce only the final checker (one command line):','small')
     p('<font face="Courier">python check_final_checkpoint.py --split split.csv --scores scores.csv --errors errors.csv --metric recall --reference safeguard --direction lower</font>','small')
     p('LR uses the unchanged word unigram/bigram TF-IDF pipeline (min_df=2, max_features=100000, sublinear TF) and logistic regression (C=1, liblinear, seed 4371). DistilBERT uses all 6,400 training rows for 3 fixed epochs, learning rate 2e-5, AdamW weight decay 0.01, effective batch 16, 10% warmup, and maximum 512 tokens; the final epoch is fixed in advance. ProtectAI weights stay frozen. Model revisions, parameters and package versions are recorded in the audit files.','small')
     p('A fresh data audit reproduced the frozen split; the new LR probabilities matched every midsemester clean-test probability exactly. GPU training is seeded but emitted a nondeterministic attention-backward warning, so bit-for-bit retraining is not claimed. Saved probabilities and checker results are deterministic artifacts. Exact-input inference caching is label blind and preserves one score row per original observation and view.','small')
@@ -149,13 +206,15 @@ def main():
         f(supplemental[('normalized_'+v,'deepset__'+m)]['metrics']['recall']['value'])+' / '+f(supplemental[('normalized_'+v,'deepset__'+m)]['metrics']['false-positive rate']['value']),
         f(supplemental[('clean','deepset__'+m)]['metrics']['recall']['value']-supplemental[(v,'deepset__'+m)]['metrics']['recall']['value']),
         f(supplemental[('normalized_'+v,'deepset__'+m)]['metrics']['recall']['value']-supplemental[(v,'deepset__'+m)]['metrics']['recall']['value'])] for m in MODELS for v in ['zero_width','homoglyph','base64']],[100,75,105,105,65,70],font='tiny')
-    p('<b>Reading the signs.</b> Several transformer obfuscation cells flag nearly every benign prompt (FPR 0.9673-1.0000), while recall reaches 1. A negative recall drop is therefore not an improvement in practical detection. On deepset, normalization restores the clean operating point: its negative recall recovery accompanies a large reduction in false alarms. On Safe-Guard, DistilBERT normalization changes one additional benign prediction to positive (82 to 83 false alarms out of 1,409).','tiny')
+    p(obfuscation_interpretation(supplemental),'tiny')
     p('The blind normalizer uses NFKC, removes four fixed invisible characters, reverses the known lookalikes and strictly decodes the known Base64 wrapper. It was accepted using validation only, then frozen. Normalized-clean is a separate control. Designed reversibility explains recovery under these encodings; no claim of general attack robustness follows. All classifier/dataset drops, recoveries and FPRs are in results/obfuscation_changes.csv; complete intervals are in results/obfuscation_metrics.json and truncation counts in the transformer audits.','tiny')
     mixed=[supplemental[('clean','gandalf_mixed__'+m)] for m in MODELS]
-    p('<b>Gandalf plus benign control.</b> All 1,000 presumed Gandalf positives are paired with all 1,409 held-out Safe-Guard benign rows (2,409 total; 41.51% positive). This is an artificial cross-source pool, not demonstrated style matching or original Gandalf negatives. Clean FPR is '+', '.join(f"{NAMES[m]} {pct(r['metrics']['false-positive rate']['value'])}" for m,r in zip(MODELS,mixed))+'. All eight views retain both classes. Reused benign rows make this control dependent on Safe-Guard results.','tiny')
+    mixed_attack=supplemental[('base64','gandalf_mixed__distilbert')]['metrics']
+    p('<b>Gandalf plus benign control.</b> All 1,000 presumed Gandalf positives are paired with all 1,409 held-out Safe-Guard benign rows (2,409 total; 41.51% positive). This is an artificial cross-source pool, not demonstrated style matching or original Gandalf negatives. Clean FPR is '+', '.join(f"{NAMES[m]} {pct(r['metrics']['false-positive rate']['value'])}" for m,r in zip(MODELS,mixed))+f". Under Base64, DistilBERT recall / FPR is {f(mixed_attack['recall']['value'])} / {f(mixed_attack['false-positive rate']['value'])}. All eight views retain both classes. Reused benign rows make this control dependent on Safe-Guard results.",'tiny')
     zero_by={r['value']:r for r in zero}
     p('<b>Week 10 zero-shot check.</b> Following Lecture 1, pages 18 and 31-36, use L2-normalized embeddings and nearest class-description cosine similarity. Qwen3-Embedding-0.6B replaces the lecture\'s 8B model to fit local resources; fixed descriptions distinguish a normal request from instruction override/extraction. The score is cosine(injection) minus cosine(benign), threshold 0, maximum 1,024 tokens, with no labeled training or calibration.','tiny')
-    p('Zero-shot recall: '+', '.join(f"{NAMES[v]} {f(zero_by[v]['metrics']['recall']['value'])}" for v in ['safeguard','deepset','gandalf'])+f"; deepset FPR {f(zero_by['deepset']['metrics']['false-positive rate']['value'])}. This comparison checks transfer without Safe-Guard fine-tuning; it cannot identify a causal fraction of the synthetic-data ceiling. Exact descriptions, intervals and model revision are recorded in the zero-shot audit/results.",'tiny')
+    truncation=', '.join(f"{NAMES[v]} {zs['truncation'][v]['truncated_rows']}" for v in ['safeguard','deepset','gandalf'])
+    p('Zero-shot recall: '+', '.join(f"{NAMES[v]} {f(zero_by[v]['metrics']['recall']['value'])}" for v in ['safeguard','deepset','gandalf'])+f"; deepset FPR {f(zero_by['deepset']['metrics']['false-positive rate']['value'])}. Truncated rows: {truncation}. This comparison checks transfer without Safe-Guard fine-tuning; it cannot identify a causal fraction of the synthetic-data ceiling. Exact descriptions, intervals and model revision are recorded in the zero-shot audit/results.",'tiny')
     sources=[
       ('Safe-Guard dataset','https://huggingface.co/datasets/xTRam1/safe-guard-prompt-injection'),
       ('deepset prompt-injections','https://huggingface.co/datasets/deepset/prompt-injections'),
@@ -163,7 +222,7 @@ def main():
       ('DistilBERT base','https://huggingface.co/distilbert/distilbert-base-uncased'),
       ('ProtectAI v2 model card','https://huggingface.co/protectai/deberta-v3-base-prompt-injection-v2'),
       ('Qwen3-Embedding-0.6B','https://huggingface.co/Qwen/Qwen3-Embedding-0.6B')]
-    p('<b>Sources.</b> '+ '; '.join(f'[{i}] <link href="{url}">{title}</link>' for i,(title,url) in enumerate(sources,1))+'. [7] R. Verma and B. Tuck, COSC 4371 Week 10 L1 slides and demo, October 27, 2026. [8] Final Project Checkpoint, Fall 2026. Dataset hashes and full revisions are in data_manifest.json; model revisions are in their audits.','tiny')
+    p('<b>Sources.</b> '+ '; '.join(f'[{i}] <link href="{url}">{title}</link>' for i,(title,url) in enumerate(sources,1))+'. [7] Bryan E. Tuck, COSC 4371 Week 10 L1 slides and demo, October 27, 2026. [8] Final Project Checkpoint, Fall 2026. Dataset hashes and full revisions are in data_manifest.json; model revisions are in their audits.','tiny')
     p('<b>AI disclosure.</b> AI was used in the organization, formatting, and structuring of this document.','small')
 
     story.append(PageBreak())

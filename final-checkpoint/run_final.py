@@ -11,6 +11,8 @@ def main():
     parser.add_argument('--data-dir',type=Path,default=HERE/'data')
     parser.add_argument('--reuse-distilbert',action='store_true',help='Use locally saved fine-tuned weights instead of training again')
     args=parser.parse_args()
+    for name in ('audit','results','figures'):
+        (HERE/name).mkdir(parents=True,exist_ok=True)
     data=['--data-dir',str(args.data_dir.resolve())]
     commands=[['verify_data.py',*data],['run_classical.py',*data],
               ['run_transformers.py',*data]+(['--reuse-distilbert'] if args.reuse_distilbert else []),

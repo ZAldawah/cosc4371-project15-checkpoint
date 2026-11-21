@@ -58,6 +58,15 @@ Recheck the primary files independently:
 python check_final_checkpoint.py --split split.csv --scores scores.csv --errors errors.csv --metric recall --reference safeguard --direction lower
 ```
 
+Validate the saved results and report without retraining models, and check that report interpretations respond correctly to changed results:
+
+```powershell
+python verify_final.py
+python test_report_prose.py
+```
+
+Output-folder checks are recorded in `audit/code_directory_verification.json`. Report prose regression checks are recorded in `audit/report_prose_verification.json`.
+
 Error sampling uses seed 4371, sorted IDs, and 10 false positives plus 10 false negatives from deepset/TF-IDF, or all available errors of a type. Preserved category annotations and rules are in `audit/error_annotations.csv` and `audit/error_category_rules.json`; assembly verifies the sampled IDs. The separate 150-record label review does not change source labels.
 
 GPU training is seeded but permits nondeterministic-operation warnings; byte-identical retraining is not claimed. Exact-text inference caching is label-blind, so restored-view timing includes cache reuse. Checker warnings require interpretation even when its exit code is zero.

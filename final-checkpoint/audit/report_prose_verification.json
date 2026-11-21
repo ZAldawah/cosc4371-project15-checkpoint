@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "command": "python test_report_prose.py",
+  "python": "3.12.7",
+  "tests_run": 15,
+  "failed_tests": [],
+  "error_tests": [],
+  "report_source_sha256": "f6be9f78cbde81951d98e9e03ec3b060e93dcc77c2b4f8fe3c0f83df5ddfc083",
+  "test_source_sha256": "ba3dcf36257b151abdf08ca84432018da6ddad35190a0a0fdc4282c367fa2819",
+  "result_fixture_sha256": {
+    "results/main_metrics.json": "727220774ed4499ef309df98ef0b703a6fd9db1ce04fbbe196f836def3c60934",
+    "results/obfuscation_metrics.json": "95c0e5430328e8be3f542d7d30821519de4d7cd9a5e64fbf9e6cc3e6fb8a1225"
+  },
+  "scope": "Measured result interpretations and counterfactual metric/verdict changes; no model reruns or result modifications"
+}

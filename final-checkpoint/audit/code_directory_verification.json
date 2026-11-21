@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "scope": "Output-directory creation only; numerical methods and existing experiment outputs were not changed.",
+  "python": "3.12.14",
+  "initial_state": "Fresh unique source-only directories; no audit, results, figures or .local output directories.",
+  "pinned_data_cache_sha256_verified": true,
+  "real_script_exit_codes": {
+    "verify_data.py": 0,
+    "run_classical.py_after_verify_data": 0,
+    "run_classical.py_standalone": 0
+  },
+  "data_audit": {
+    "raw_rows": 11958,
+    "retained_rows": 11706,
+    "frozen_split_reproduced": true,
+    "all_measured_boundary_overlaps_zero": true
+  },
+  "all_eight_view_tfidf_scores_byte_equal": true,
+  "test_score_rows": 29720,
+  "comparisons_after_data_audit": {
+    "results/tfidf_lr_scores.csv": true,
+    "results/tfidf_lr_validation.csv": true,
+    "audit/normalization_freeze.json": true
+  },
+  "comparisons_standalone": {
+    "results/tfidf_lr_scores.csv": true,
+    "results/tfidf_lr_validation.csv": true,
+    "audit/normalization_freeze.json": true
+  },
+  "private_error_sample_reproduced_without_redistribution": true,
+  "orchestrator_preflight": {
+    "required_directories_exist_before_every_subprocess": true,
+    "script_order_unchanged": [
+      "verify_data.py",
+      "run_classical.py",
+      "run_transformers.py",
+      "run_zeroshot.py",
+      "assemble_results.py",
+      "build_final_report.py",
+      "verify_final.py"
+    ],
+    "subprocess_calls_intercepted": true,
+    "transformers_not_retrained": true
+  },
+  "changed_script_sha256": {
+    "run_final.py": "ebbef1bc8d83e8d972940810d408d1524c4c5501984a2ca745b45b47aa4931ba",
+    "run_classical.py": "57b55704dfedd735d805a7f04fca5a626a5d44e054ecd6c06981938d76b03b8f",
+    "verify_data.py": "d50c7f34fd10d1950a1b4cfdc1efefd2c8666acd51da9d30d6a92b0d65b0ff09"
+  },
+  "common_source_unchanged_sha256": "4291a82ca4a99adeeb7550ad88e3e17a3ed5dfbe34a340ebcf20c22b8ee4b14d",
+  "standalone_report_builder": {
+    "initial_state": "Fresh unique directory with only required report inputs; figures directory and output PDF absent.",
+    "exit_code": 0,
+    "figure_generated": true,
+    "pdf_pages": 8,
+    "exact_disclosure_occurrences": 1,
+    "disclosure_label_occurrences": 1,
+    "python": "3.12.14",
+    "reportlab": "4.4.9",
+    "builder_sha256": "f6be9f78cbde81951d98e9e03ec3b060e93dcc77c2b4f8fe3c0f83df5ddfc083",
+    "final_report_and_existing_measured_artifacts_not_modified": true
+  },
+  "verify_final_output_directory_review": "No additional issue: final output uses final_common.write_json, which creates parent directories. Its existing audit/result files are required inputs to verification."
+}

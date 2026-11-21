@@ -11,7 +11,7 @@ def main():
     parser.add_argument('--data-dir',type=Path,default=HERE/'data')
     args=parser.parse_args()
     dest=HERE/'audit'/'recomputed'
-    dest.mkdir(exist_ok=True)
+    dest.mkdir(parents=True,exist_ok=True)
     raw,inputs=baseline.read_data(args.data_dir)
     grouped,near=baseline.duplicate_audit(raw,dest)
     kept,cleanup=baseline.clean_split(grouped,dest)

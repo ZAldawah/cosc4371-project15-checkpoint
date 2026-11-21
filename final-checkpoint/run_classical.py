@@ -16,6 +16,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-dir', type=Path)
     args = parser.parse_args()
+    for name in ('audit', 'results', '.local'):
+        (HERE / name).mkdir(parents=True, exist_ok=True)
     data = load_data(args.data_dir)
     checks = leakage_checks(data)
     train, val, test = [data[data.split == s].copy() for s in ('train','validation','test')]
@@ -68,7 +70,6 @@ def main():
         results.append(part)
     scored = pd.concat(results,ignore_index=True)
     scored.to_csv(HERE/'results'/'tfidf_lr_scores.csv', index=False, float_format='%.17g')
-    (HERE/'.local').mkdir(exist_ok=True)
     joblib.dump(model, HERE/'.local'/'tfidf_lr.joblib')
     detail = {'seed':SEED, 'fit_seconds':fit_seconds, 'score_seconds_by_view':timings,
               'threshold':threshold, 'threshold_repr':repr(threshold), 'threshold_rule':'lowest unique clean-validation probability with FPR <= 0.05; positive iff score >= threshold',
